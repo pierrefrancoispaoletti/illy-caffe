@@ -1,2 +1,5 @@
 export const placeLocation = "illy";
-export const developmentServer = "http://localhost:5000";
+export let developmentServer =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000"
+    : "https://young-badlands-89715.herokuapp.com";

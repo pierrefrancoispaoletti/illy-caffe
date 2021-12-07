@@ -21,11 +21,11 @@ const TableauHomePage = ({ children }) => {
   return (
     <TableauContainer>
       <TableauWrapper>
-        <TableauTitle>{findCategory.name}</TableauTitle>
+        <TableauTitle>{findCategory?.name}</TableauTitle>
         {user && user.role === "isAdmin" && (
           <>
             <AddProductButton />
-            <ProductModal currentCategory={findCategory.slug} />
+            <ProductModal currentCategory={findCategory?.slug} />
           </>
         )}
         {children}

@@ -1,13 +1,14 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router";
-import Home from "../../pages/Home/Home";
-import Login from "../../pages/Login/Login";
-import Products from "../../pages/Products/Products";
 import { selectCurrentUser } from "../../redux/reducers/User/selector";
 import CategorySelector from "../CategorySelector/CategorySelector";
 import Header from "../Header/Header";
+import Loader from "../Loader/Loader";
 import LocalMessage from "../LocalMessage/LocalMessage";
+const Home = lazy(() => import("../../pages/Home/Home"));
+const Login = lazy(() => import("../../pages/Login/Login"));
+const Products = lazy(() => import("../../pages/Products/Products"));
 const App = () => {
   const user = useSelector(selectCurrentUser);
   return (
@@ -15,14 +16,17 @@ const App = () => {
       <Header />
       <LocalMessage />
       <CategorySelector />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path={`products/:category`} element={<Products />} />
-        <Route
-          path="connexion"
-          element={user ? <Navigate replace to="/" /> : <Login />}
-        />
-      </Routes>
+      <Loader />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path={`products/:category`} element={<Products />} />
+          <Route
+            path="connexion"
+            element={user ? <Navigate replace to="/" /> : <Login />}
+          />
+        </Routes>
+      </Suspense>
     </div>
   );
 };

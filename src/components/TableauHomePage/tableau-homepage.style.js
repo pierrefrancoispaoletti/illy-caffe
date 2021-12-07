@@ -65,6 +65,9 @@ export const TableauContent = styled.div`
   margin: 0px 1.5em;
   text-align: center;
   font-size: 1.8rem;
+  @media (max-width: 420px) {
+    align-items: center;
+  }
   ${contentVisible}
 
   .title {
@@ -111,4 +114,10 @@ export const WineItemElement = styled.span`
   background: grey;
   font-size: 0.7em;
   ${getWineColor}
+  :last-child {
+    margin-right: 0;
+  }
+  @media (max-width: 420px) {
+    margin-right: 0;
+  }
 `;
