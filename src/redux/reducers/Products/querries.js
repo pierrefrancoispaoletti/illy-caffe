@@ -21,7 +21,7 @@ export const getProductsByLocation = async (location, category, dispatch) => {
   }
 };
 
-export const deleteProduct = async (productId, dispatch) => {
+export const deleteProduct = async (productId, dispatch, token) => {
   if (!productId) {
     return false;
   }
@@ -31,6 +31,9 @@ export const deleteProduct = async (productId, dispatch) => {
       method: "DELETE",
       url: `${developmentServer}/api/products/deleteProduct`,
       data: { _id: productId },
+      headers: {
+        Authorization: "Bearer " + token,
+      },
     });
     dispatch(deleteProductAction(response.data.deletedProduct));
     dispatch(setUserMessage(response.data.message));
@@ -39,12 +42,15 @@ export const deleteProduct = async (productId, dispatch) => {
   }
 };
 
-export const addProduct = async (product, dispatch) => {
+export const addProduct = async (product, dispatch, token) => {
   try {
     const response = await axios({
       method: "POST",
       url: `${developmentServer}/api/products/addProduct`,
       data: { product },
+      headers: {
+        Authorization: "Bearer " + token,
+      },
     });
 
     dispatch(addProductAction(response.data.newProduct));
@@ -55,12 +61,15 @@ export const addProduct = async (product, dispatch) => {
   }
 };
 
-export const updateProdut = async (update, dispatch) => {
+export const updateProdut = async (update, dispatch, token) => {
   try {
     const response = await axios({
       method: "POST",
       url: `${developmentServer}/api/products/updateProduct`,
       data: { update },
+      headers: {
+        Authorization: "Bearer " + token,
+      },
     });
 
     dispatch(updateProductAction(response.data.updatedProduct));

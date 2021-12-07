@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   AdminButton,
   AdminButtonBarContainer,
@@ -20,8 +20,10 @@ import {
   setProductToEdit,
   toggleModal,
 } from "../../redux/reducers/Products/actions";
+import { selectCurrentUser } from "../../redux/reducers/User/selector";
 
 const AdminButtonBar = ({ _id, product }) => {
+  const { token } = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
   return (
     <AdminButtonBarContainer>
@@ -40,7 +42,7 @@ const AdminButtonBar = ({ _id, product }) => {
         <AdminButton
           type="button"
           onClick={() =>
-            updateProdut({ _id, visible: !product?.visible }, dispatch)
+            updateProdut({ _id, visible: !product?.visible }, dispatch, token)
           }
         >
           <FontAwesomeIcon
@@ -51,7 +53,10 @@ const AdminButtonBar = ({ _id, product }) => {
         </AdminButton>
       </AdminButtonContainer>
       <AdminButtonContainer>
-        <AdminButton type="button" onClick={() => deleteProduct(_id, dispatch)}>
+        <AdminButton
+          type="button"
+          onClick={() => deleteProduct(_id, dispatch, token)}
+        >
           <FontAwesomeIcon icon={faTrash} size="2x" color="red" />
         </AdminButton>
       </AdminButtonContainer>

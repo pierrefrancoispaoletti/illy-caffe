@@ -19,10 +19,12 @@ import {
 } from "../../redux/reducers/Products/selectors";
 import { toggleModal } from "../../redux/reducers/Products/actions";
 import { placeLocation } from "../../_const";
+import { selectCurrentUser } from "../../redux/reducers/User/selector";
 
 const ProductModal = ({ currentCategory }) => {
   const { type, open } = useSelector(selectModalType);
   const productToEdit = useSelector(selectProductToEdit);
+  const { token } = useSelector(selectCurrentUser);
 
   const dispatch = useDispatch();
 
@@ -81,10 +83,12 @@ const ProductModal = ({ currentCategory }) => {
       couleur,
     };
     if (type === "ajouter") {
-      addProduct(newProduct, dispatch).then(() => clearState());
+      addProduct(newProduct, dispatch, token).then(() => clearState());
     }
     if (type === "editer") {
-      updateProdut({ ...newProduct, _id }, dispatch).then(() => clearState());
+      updateProdut({ ...newProduct, _id }, dispatch, token).then(() =>
+        clearState()
+      );
     }
   };
 
