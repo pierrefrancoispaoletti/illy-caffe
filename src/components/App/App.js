@@ -16,7 +16,6 @@ const App = () => {
       <Header />
       <LocalMessage />
       <CategorySelector />
-      <Loader />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />

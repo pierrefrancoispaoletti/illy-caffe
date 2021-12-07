@@ -29,7 +29,6 @@ const getWineColor = (props) => {
 export const TableauContainer = styled.div`
   border: 14px solid #deb887;
   margin: 12px;
-  position: relative;
   box-shadow: 0px 9px 23px -5px rgba(0, 0, 0, 0.58);
 `;
 
@@ -42,6 +41,7 @@ export const TableauWrapper = styled.div`
 `;
 
 export const TableauTitle = styled.h2`
+  position: relative;
   font-family: "crayonHand";
   font-size: 2.6em;
   color: #fdfdfd;
@@ -55,6 +55,7 @@ export const TableauTitle = styled.h2`
 `;
 
 export const TableauContent = styled.div`
+  position: relative;
   font-family: "crayonHand";
   display: flex;
   width: 80%;

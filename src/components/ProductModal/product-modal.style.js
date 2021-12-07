@@ -28,8 +28,8 @@ const isShownModal = (props) => {
     `;
 };
 export const AddProductModalContainer = styled.div`
-  position: absolute;
-  top: 15%;
+  position: fixed;
+  z-index: 18;
   left: 0;
   right: 0;
   background: rgba(255, 255, 255, 0.9);
