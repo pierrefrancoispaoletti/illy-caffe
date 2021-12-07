@@ -18,6 +18,7 @@ export const GroupContainer = styled.div`
 `;
 
 export const FormInputContainer = styled.input`
+  width: 100%;
   background: none;
   background-color: transparent;
   color: ${mainColor};
