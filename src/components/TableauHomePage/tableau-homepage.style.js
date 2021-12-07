@@ -89,9 +89,10 @@ export const TableauContent = styled.div`
   }
 
   .price {
+    font-family: "ChalkAboutItalic";
+    font-weight: 400;
     font-size: 2rem;
     padding: 12px;
-    text-decoration: underline;
   }
 
   .description {

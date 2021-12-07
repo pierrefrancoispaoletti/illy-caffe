@@ -121,6 +121,8 @@ const ProductModal = ({ currentCategory }) => {
         <FormInput
           type="number"
           name="price"
+          pattern="\\d*"
+          step={0.1}
           handleChange={handleChange}
           label="Prix"
           value={price}
