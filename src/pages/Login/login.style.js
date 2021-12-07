@@ -5,10 +5,11 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 12px;
   border-radius: 50px;
+  margin: 12px;
   background: linear-gradient(to right, #fdfdfd, #fe0000);
   background-size: 400% 400%;
+  padding-bottom: 12px;
   animation: backgroundMoving 25s infinite ease;
   @keyframes backgroundMoving {
     0% {
@@ -33,13 +34,7 @@ export const FormContainer = styled.form`
   justify-content: center;
 `;
 
-export const FormFieldContainer = styled.div`
-  margin: 12px 8px;
-  padding: 8px;
-`;
-
 export const LoginButton = styled.button`
-  width: 100%;
   font-size: 2em;
   background-color: transparent;
   outline: none;

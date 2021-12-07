@@ -6,12 +6,7 @@ import {
   setUserMessage,
 } from "../../redux/reducers/User/actions";
 import { logger } from "../../redux/reducers/User/querries";
-import {
-  FormContainer,
-  FormFieldContainer,
-  LoginButton,
-  LoginContainer,
-} from "./login.style";
+import { FormContainer, LoginButton, LoginContainer } from "./login.style";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -33,29 +28,23 @@ const Login = () => {
       <LoginContainer>
         <h2>Connexion</h2>
         <FormContainer onSubmit={handleSubmit}>
-          <FormFieldContainer>
-            <FormInput
-              type="email"
-              name="email"
-              label="e-mail"
-              value={user.email}
-              handleChange={setCredentials}
-              required
-            />
-          </FormFieldContainer>
-          <FormFieldContainer>
-            <FormInput
-              type="password"
-              name="password"
-              label="mot de passe"
-              value={user.password}
-              handleChange={setCredentials}
-              required
-            />
-          </FormFieldContainer>
-          <FormFieldContainer>
-            <LoginButton type="submit">Se Connecter</LoginButton>
-          </FormFieldContainer>
+          <FormInput
+            type="email"
+            name="email"
+            label="e-mail"
+            value={user.email}
+            handleChange={setCredentials}
+            required
+          />
+          <FormInput
+            type="password"
+            name="password"
+            label="mot de passe"
+            value={user.password}
+            handleChange={setCredentials}
+            required
+          />
+          <LoginButton type="submit">Se Connecter</LoginButton>
         </FormContainer>
       </LoginContainer>
     </main>
