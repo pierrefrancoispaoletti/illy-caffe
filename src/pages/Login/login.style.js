@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const isDisabled = (props) => {
+  if (props.disabled) {
+    return css`
+      background: #ccc;
+    `;
+  }
+};
 
 export const LoginContainer = styled.div`
   display: flex;
@@ -42,4 +50,5 @@ export const LoginButton = styled.button`
   border: 3px solid #fdfdfd;
   border-radius: 50px;
   background: #fe0000;
+  ${isDisabled}
 `;

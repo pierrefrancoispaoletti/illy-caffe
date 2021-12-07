@@ -12,6 +12,9 @@ export const GroupContainer = styled.div`
   position: relative;
   margin: auto 0;
 
+  input[type="email"] {
+    letter-spacing: 0.3em;
+  }
   input[type="password"] {
     letter-spacing: 0.3em;
   }
@@ -51,5 +54,7 @@ export const LabelContainer = styled.label`
   transition: 300ms ease all;
   text-transform: capitalize;
 
-  ${shrinkLabelStyles}
+  &.shrink {
+    ${shrinkLabelStyles}
+  }
 `;

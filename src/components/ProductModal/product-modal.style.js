@@ -27,9 +27,18 @@ const isShownModal = (props) => {
       display: none;
     `;
 };
+
+const isDisabled = (props) => {
+  if (props.disabled) {
+    return css`
+      background: #ccc;
+    `;
+  }
+};
 export const AddProductModalContainer = styled.div`
   position: fixed;
   z-index: 18;
+  top: 10px;
   left: 0;
   right: 0;
   background: rgba(255, 255, 255, 0.9);
@@ -61,19 +70,35 @@ export const AddProductButtonStyled = styled.button`
   border-radius: 50px;
   font-weight: bold;
   ${modalColorType}
+  ${isDisabled}
 `;
 
 export const CheckBoxContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   margin-bottom: 12px;
   font-size: 1em;
+  & div {
+    margin-bottom: 3px;
+  }
   & input[type="checkbox"] {
-    display: block;
+    vertical-align: bottom;
+    width: 35px;
+    height: 35px;
+    margin: 0 8px;
+  }
+  & input[type="number"] {
+    outline: none;
+    vertical-align: middle;
+    font-size: 1.2em;
     width: 35px;
     height: 35px;
     margin-left: 8px;
+    margin-right: 8px;
   }
 `;

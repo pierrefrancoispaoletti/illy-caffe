@@ -19,9 +19,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await logger(user);
-    dispatch(setCurrentUser({ token: response.token, role: response.role }));
-    dispatch(setUserMessage(response.message));
+    logger(user, dispatch);
   };
   return (
     <main>
@@ -44,7 +42,9 @@ const Login = () => {
             handleChange={setCredentials}
             required
           />
-          <LoginButton type="submit">Se Connecter</LoginButton>
+          <LoginButton disabled={!user.password || !user.email} type="submit">
+            Se Connecter
+          </LoginButton>
         </FormContainer>
       </LoginContainer>
     </main>

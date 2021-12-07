@@ -76,7 +76,7 @@ export const TableauContent = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     color: #fdfdfd;
     letter-spacing: 2px;
     font-size: 2rem;
@@ -85,6 +85,7 @@ export const TableauContent = styled.div`
     @media (max-width: 420px) {
       flex-direction: column;
       justify-content: center;
+      align-items: center;
     }
   }
 
@@ -92,7 +93,6 @@ export const TableauContent = styled.div`
     font-family: "ChalkAboutItalic";
     font-weight: 400;
     font-size: 2rem;
-    padding: 12px;
   }
 
   .description {
@@ -107,6 +107,22 @@ export const TableauContent = styled.div`
 
 export const WineColorContainer = styled.div``;
 
+export const WinePriceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: right;
+  justify-content: center;
+  vertical-align: baseline;
+`;
+
+export const WinePriceElement = styled.span`
+  background-color: grey;
+  margin-bottom: 8px;
+  width: 100%;
+  ${getWineColor};
+`;
+
 export const WineItemElement = styled.span`
   padding: 6px 8px;
   border: 3px solid white;
@@ -115,6 +131,10 @@ export const WineItemElement = styled.span`
   margin-right: 1em;
   background: grey;
   font-size: 0.7em;
+  :active {
+    background: white;
+    border: 3px solid black;
+  }
   ${getWineColor}
   :last-child {
     margin-right: 0;

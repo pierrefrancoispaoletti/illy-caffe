@@ -1,7 +1,8 @@
 import axios from "axios";
 import { developmentServer } from "../../../_const";
+import { setCurrentUser, setUserMessage } from "./actions";
 
-export const logger = async (credentials) => {
+export const logger = async (credentials, dispatch) => {
   const { email, password } = credentials;
   try {
     const response = await axios({
@@ -9,9 +10,15 @@ export const logger = async (credentials) => {
       url: `${developmentServer}/auth/login`,
       data: { email, password },
     });
-    return response.data;
+    console.log(response);
+    if (response.data.status === 200) {
+      dispatch(
+        setCurrentUser({ token: response.data.token, role: response.data.role })
+      );
+    }
+    dispatch(setUserMessage(response.data.message));
   } catch (error) {
-    console.log(error);
+    dispatch(setUserMessage("Il y à eu un problème"));
   }
 };
 

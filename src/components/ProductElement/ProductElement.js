@@ -1,17 +1,13 @@
 import React from "react";
 import AdminButtonBar from "../AdminButtonBar/AdminButtonBar";
-import {
-  TableauContent,
-  WineColorContainer,
-  WineItemElement,
-} from "../TableauHomePage/tableau-homepage.style";
+import { TableauContent } from "../TableauHomePage/tableau-homepage.style";
 import { selectCurrentUser } from "../../redux/reducers/User/selector";
 import { useSelector } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWineBottle } from "@fortawesome/pro-solid-svg-icons";
+import WineElement from "../WineElement/WineElement";
 
 const ProductElement = ({ product }) => {
-  const { _id, price, description, title, visible, couleur } = product;
+  const { _id, price, description, title, visible, category, couleur } =
+    product;
   const user = useSelector(selectCurrentUser);
   return (
     <TableauContent visible={user?.role === "isAdmin" || visible}>
@@ -19,10 +15,14 @@ const ProductElement = ({ product }) => {
         <AdminButtonBar _id={_id} product={product} />
       )}
       <h3 className="title">
-        {`${visible ? "" : "CACHÉ : "} ${title}`}
-        <span className="price">{price?.toFixed(2)}€</span>
+        <span>{`${visible ? "" : "CACHÉ : "} ${title}`}</span>
+        {category !== "le-vin" || couleur.every((color) => !color.isChecked) ? (
+          <span className="price">{price?.toFixed(2)} €</span>
+        ) : (
+          <WineElement couleur={couleur} />
+        )}
       </h3>
-      <WineColorContainer>
+      {/* <WineColorContainer>
         {couleur.map(
           (color) =>
             color.isChecked && (
@@ -31,7 +31,7 @@ const ProductElement = ({ product }) => {
               </WineItemElement>
             )
         )}
-      </WineColorContainer>
+      </WineColorContainer> */}
       <p className="description">{description}</p>
     </TableauContent>
   );
