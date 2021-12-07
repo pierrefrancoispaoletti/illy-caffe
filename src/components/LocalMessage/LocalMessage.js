@@ -11,14 +11,17 @@ const LocalMessage = () => {
   const message = useSelector(selectMessage);
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
+
   useEffect(() => {
+    let timeout;
     setVisible(true);
     if (visible) {
-      setTimeout(() => {
+      timeout = setTimeout(() => {
         setVisible(false);
         dispatch(setUserMessage(""));
       }, 3000);
     }
+    return () => clearTimeout(timeout);
   }, [message, dispatch]);
   return (
     message && (

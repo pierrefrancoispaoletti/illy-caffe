@@ -117,7 +117,7 @@ export const WinePriceContainer = styled.div`
 `;
 
 export const WinePriceElement = styled.span`
-  background-color: grey;
+  background-color: #565a68;
   margin-bottom: 8px;
   width: 100%;
   ${getWineColor};
