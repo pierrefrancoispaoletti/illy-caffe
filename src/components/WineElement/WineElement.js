@@ -13,7 +13,7 @@ const WineElement = ({ couleur }) => {
         (color) =>
           color?.isChecked && (
             <WinePriceElement
-              className="price"
+              className="price wineprice"
               key={color.value}
               color={color.value}
             >

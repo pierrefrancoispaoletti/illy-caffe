@@ -145,7 +145,15 @@ export const TableauContent = styled.div`
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-bottom: 12px;
+    & > span {
+      max-width: 50%;
+      text-align: left;
+    }
     @media (max-width: 420px) {
+      & > span {
+        max-width: 100%;
+        text-align: center;
+      }
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -155,7 +163,9 @@ export const TableauContent = styled.div`
   .price {
     font-family: "ChalkAboutItalic";
     font-weight: 400;
-    border-bottom: 3px solid ${colors.main};
+    :not(.wineprice) {
+      border-bottom: 3px solid ${colors.main};
+    }
     font-size: 1.2rem;
     @media (max-width: 370px) {
       font-size: 1.5rem;
