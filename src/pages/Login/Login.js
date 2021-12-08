@@ -5,11 +5,9 @@ import LoaderElement from "../../components/Loader/LoaderElement";
 import { logger } from "../../redux/reducers/User/querries";
 import { FormContainer, LoginButton, LoginContainer } from "./login.style";
 
-const Login = ({ loading, setLoading, ...otherProps }) => {
+const Login = ({ loading, setLoading }) => {
   const dispatch = useDispatch();
   const [user, setUser] = useState({ email: "", password: "" });
-
-  console.log(otherProps);
 
   const setCredentials = (e) => {
     const { name, value } = e.target;
