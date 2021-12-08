@@ -11,7 +11,13 @@ import {
 
 // ajouter une check des status dans les reponses pour savoir si onrenvoit la data ou le message
 
-export const getProductsByLocation = async (location, category, dispatch) => {
+export const getProductsByLocation = async (
+  location,
+  category,
+  dispatch,
+  setLoading
+) => {
+  setLoading(true);
   try {
     const response = await axios({
       method: "GET",
@@ -22,6 +28,7 @@ export const getProductsByLocation = async (location, category, dispatch) => {
     } else {
       dispatch(setUserMessage(response.data.message));
     }
+    setLoading(false);
   } catch (error) {
     console.log(error);
   }

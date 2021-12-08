@@ -1,8 +1,10 @@
 import {
+  faCheeseburger,
   faCocktail,
   faGlass,
   faHatChef,
   faMugHot,
+  faStroopwafel,
   faWineBottle,
 } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +15,18 @@ export const categories = [
     icon: <FontAwesomeIcon icon={faHatChef} size="2x" />,
     link: "/",
     slug: "today",
+  },
+  {
+    name: "Burgers",
+    icon: <FontAwesomeIcon icon={faCheeseburger} size="2x" />,
+    link: "/products/burgers",
+    slug: "burgers",
+  },
+  {
+    name: "Gauffres",
+    icon: <FontAwesomeIcon icon={faStroopwafel} size="2x" />,
+    link: "/products/gauffres",
+    slug: "gauffres",
   },
   {
     name: "Le Chaud",

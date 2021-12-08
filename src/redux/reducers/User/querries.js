@@ -2,8 +2,9 @@ import axios from "axios";
 import { developmentServer } from "../../../_const";
 import { setCurrentUser, setUserMessage } from "./actions";
 
-export const logger = async (credentials, dispatch) => {
+export const logger = async (credentials, dispatch, setLoading) => {
   const { email, password } = credentials;
+  setLoading(true);
   try {
     const response = await axios({
       method: "POST",
@@ -17,6 +18,7 @@ export const logger = async (credentials, dispatch) => {
       );
     }
     dispatch(setUserMessage(response.data.message));
+    setLoading(false);
   } catch (error) {
     dispatch(setUserMessage("Il y à eu un problème"));
   }
