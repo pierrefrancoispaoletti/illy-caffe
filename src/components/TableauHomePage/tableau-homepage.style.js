@@ -106,6 +106,7 @@ export const TableauTitle = styled.h2`
   position: relative;
   font-family: "crayonHand";
   font-size: 2.6em;
+  margin-bottom: 12px;
   color: ${colors.main};
   text-align: center;
   text-decoration: underline;
@@ -141,7 +142,7 @@ export const TableauContent = styled.div`
     align-items: flex-start;
     color: ${colors.main};
     letter-spacing: 2px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     margin-bottom: 12px;
     @media (max-width: 420px) {
@@ -154,14 +155,16 @@ export const TableauContent = styled.div`
   .price {
     font-family: "ChalkAboutItalic";
     font-weight: 400;
-    font-size: 2rem;
+    border-bottom: 3px solid ${colors.main};
+    font-size: 1.2rem;
     @media (max-width: 370px) {
       font-size: 1.5rem;
     }
   }
 
   .description {
-    text-align: left;
+    text-align: center;
+    margin: 0;
   }
 
   .wine-color {

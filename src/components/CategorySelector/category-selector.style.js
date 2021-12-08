@@ -47,10 +47,10 @@ export const LinkContainer = styled(NavLink)`
   text-decoration: none;
   color: ${colors.secondary};
   &.active {
-    text-decoration: underline;
+    text-decoration: underline ${colors.main};
     & > li {
       background: ${colors.secondary};
-      border: 1px solid ${colors.main};
+      border: 3px solid ${colors.main};
       color: ${colors.main};
     }
   }
