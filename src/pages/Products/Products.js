@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ProductOverview from "../../components/ProductOverview/ProductOverview";
+import { selectProductsByCategory } from "../../redux/reducers/Products/selectors";
 import useFetchProducts from "../../useFetchProducts/useFetchProducts";
 
 const Products = ({ loading, setLoading }) => {
-  const products = useFetchProducts(setLoading);
+  const products = useSelector(selectProductsByCategory);
+  useFetchProducts(setLoading);
 
   return (
     <main>
