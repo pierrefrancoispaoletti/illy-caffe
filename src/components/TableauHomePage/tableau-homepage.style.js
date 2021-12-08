@@ -14,6 +14,58 @@ const playAnimation = (props) => {
   }
 };
 
+const getTransitionType = (props) => {
+  //blur pour une transition blur,
+  //scale pour un zoom
+  switch (props.transitionType) {
+    case "blur":
+      return css`
+        animation: blurArray 0.5s ease-in-out ${playAnimation};
+        @keyframes blurArray {
+          0% {
+            filter: blur(10px);
+          }
+          100% {
+            filter: blur(0);
+          }
+        }
+      `;
+    case "scale":
+      return css`
+        animation: scaleArray 0.2s ease ${playAnimation};
+        @keyframes scaleArray {
+          0% {
+            transform: scale(100%);
+          }
+          100% {
+            transform: scale(0%);
+          }
+        }
+      `;
+    case "scale reverse":
+      return css`
+        animation: scaleArray 1.5s linear ${playAnimation} reverse;
+        @keyframes scaleArray {
+          0% {
+            transform: scale(100%);
+          }
+          50% {
+            transform: scale(50%);
+          }
+          75% {
+            transform: scale(25%);
+          }
+          100% {
+            transform: scale(0%);
+          }
+        }
+      `;
+
+    default:
+      break;
+  }
+};
+
 const getWineColor = (props) => {
   switch (props.color) {
     case "rouge":
@@ -35,9 +87,10 @@ const getWineColor = (props) => {
 
 export const TableauContainer = styled.div`
   border: 14px solid #deb887;
-  margin: 12px;
+  margin: 0px 8px;
   box-shadow: 0px 9px 23px -5px rgba(0, 0, 0, 0.58);
   perspective: 1500px;
+  background: #484b56;
 `;
 
 export const TableauWrapper = styled.div`
@@ -46,20 +99,7 @@ export const TableauWrapper = styled.div`
   align-items: center;
   background-color: #484b56;
   min-height: 80vh;
-  border: 1px solid black;
-  box-shadow: 0px 0px 12px 0px rgba(255, 255, 255, 0.58) inset;
-  animation: blurringArray 1.5s ease-in-out ${playAnimation};
-  @keyframes blurringArray {
-    0% {
-      filter: blur(10px);
-    }
-    0% {
-      filter: blur(5px);
-    }
-    100% {
-      filter: blur(0);
-    }
-  }
+  ${getTransitionType}
 `;
 
 export const TableauTitle = styled.h2`

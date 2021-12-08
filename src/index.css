@@ -3,7 +3,20 @@
 }
 
 html {
-  background: #fdfdfd;
+  background: linear-gradient(to left, #fdfdfd, #fe0000);
+  background-size: 400% 400%;
+  animation: backgroundMoving 25s infinite ease;
+  @keyframes backgroundMoving {
+    0% {
+      background-position: 92% 0%;
+    }
+    50% {
+      background-position: 9% 100%;
+    }
+    100% {
+      background-position: 92% 0%;
+    }
+  }
 }
 
 body {

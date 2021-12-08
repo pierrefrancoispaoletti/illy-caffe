@@ -36,7 +36,7 @@ export const LocalMessageContainer = styled.div`
 export const LocalMessageWrapper = styled.div`
   background-color: lightGreen;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
   padding: 12px;
   border-radius: 50px;
   border: 3px solid green;

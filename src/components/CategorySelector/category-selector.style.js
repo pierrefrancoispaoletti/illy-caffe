@@ -6,7 +6,6 @@ export const CategoriesContainer = styled.nav`
   display: flex;
   padding: 8px 0px;
   overflow-x: auto;
-  margin-bottom: 25px;
 `;
 
 export const ListContainer = styled.ul`

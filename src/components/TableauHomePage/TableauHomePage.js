@@ -19,7 +19,6 @@ const TableauHomePage = ({ children }) => {
   const user = useSelector(selectCurrentUser);
 
   let prevlocationValueRef = useRef(null);
-
   useEffect(() => {
     prevlocationValueRef.current = location.pathname;
   });
@@ -27,7 +26,10 @@ const TableauHomePage = ({ children }) => {
 
   return (
     <TableauContainer>
-      <TableauWrapper transition={prevlocationValue !== location.pathname}>
+      <TableauWrapper
+        transition={prevlocationValue !== location.pathname}
+        transitionType="scale"
+      >
         <TableauTitle>{findCategory?.name}</TableauTitle>
         {user && user.role === "isAdmin" && (
           <>
