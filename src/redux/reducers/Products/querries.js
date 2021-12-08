@@ -18,6 +18,9 @@ export const getProductsByLocation = async (
   setLoading
 ) => {
   setLoading(true);
+  if (!category) {
+    category = "today";
+  }
   try {
     const response = await axios({
       method: "GET",
@@ -30,7 +33,8 @@ export const getProductsByLocation = async (
     }
     setLoading(false);
   } catch (error) {
-    console.log(error);
+    dispatch(setUserMessage("Il y à eu un problème"));
+    setLoading(false);
   }
 };
 
