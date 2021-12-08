@@ -13,6 +13,7 @@ const ProductsPage = lazy(() =>
 const App = () => {
   const user = useSelector(selectCurrentUser);
   const [loading, setLoading] = useState(false);
+
   return (
     <div>
       <Header />

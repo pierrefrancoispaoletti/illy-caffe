@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import FormInput from "../../components/FormInput/FormInput";
 import LoaderElement from "../../components/Loader/LoaderElement";
 import { logger } from "../../redux/reducers/User/querries";
 import { FormContainer, LoginButton, LoginContainer } from "./login.style";
 
-const Login = ({ loading, setLoading }) => {
+const Login = ({ loading, setLoading, ...otherProps }) => {
   const dispatch = useDispatch();
   const [user, setUser] = useState({ email: "", password: "" });
+
+  console.log(otherProps);
 
   const setCredentials = (e) => {
     const { name, value } = e.target;
@@ -42,7 +44,10 @@ const Login = ({ loading, setLoading }) => {
               handleChange={setCredentials}
               required
             />
-            <LoginButton disabled={!user.password || !user.email} type="submit">
+            <LoginButton
+              disabled={!user.password || !user.email || loading}
+              type="submit"
+            >
               Se Connecter
             </LoginButton>
           </FormContainer>

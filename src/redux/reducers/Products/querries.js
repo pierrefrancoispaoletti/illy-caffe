@@ -1,5 +1,5 @@
 import axios from "axios";
-import { developmentServer } from "../../../_const";
+import { serverURI } from "../../../_const";
 import { setUserMessage } from "../User/actions";
 import {
   addProductAction,
@@ -24,7 +24,7 @@ export const getProductsByLocation = async (
   try {
     const response = await axios({
       method: "GET",
-      url: `${developmentServer}/api/products/${location}/${category}`,
+      url: `${serverURI}/api/products/${location}/${category}`,
     });
     if (response.status === 200) {
       dispatch(getProductsByLocationAction(response.data));
@@ -46,7 +46,7 @@ export const deleteProduct = async (productId, dispatch, token) => {
   try {
     const response = await axios({
       method: "DELETE",
-      url: `${developmentServer}/api/products/deleteProduct`,
+      url: `${serverURI}/api/products/deleteProduct`,
       data: { _id: productId },
       headers: {
         Authorization: "Bearer " + token,
@@ -57,7 +57,7 @@ export const deleteProduct = async (productId, dispatch, token) => {
     }
     dispatch(setUserMessage(response.data.message));
   } catch (error) {
-    console.log(error);
+    dispatch(setUserMessage("Il y à eu un problème"));
   }
 };
 
@@ -65,7 +65,7 @@ export const addProduct = async (product, dispatch, token) => {
   try {
     const response = await axios({
       method: "POST",
-      url: `${developmentServer}/api/products/addProduct`,
+      url: `${serverURI}/api/products/addProduct`,
       data: { product },
       headers: {
         Authorization: "Bearer " + token,
@@ -77,7 +77,7 @@ export const addProduct = async (product, dispatch, token) => {
     dispatch(setUserMessage(response.data.message));
     dispatch(toggleModal(""));
   } catch (error) {
-    console.log(error);
+    dispatch(setUserMessage("Il y à eu un problème"));
   }
 };
 
@@ -85,7 +85,7 @@ export const updateProdut = async (update, dispatch, token) => {
   try {
     const response = await axios({
       method: "POST",
-      url: `${developmentServer}/api/products/updateProduct`,
+      url: `${serverURI}/api/products/updateProduct`,
       data: { update },
       headers: {
         Authorization: "Bearer " + token,
@@ -97,6 +97,6 @@ export const updateProdut = async (update, dispatch, token) => {
     dispatch(setUserMessage(response.data.message));
     dispatch(toggleModal(""));
   } catch (error) {
-    console.log(error);
+    dispatch(setUserMessage("Il y à eu un problème"));
   }
 };
