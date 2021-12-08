@@ -35,6 +35,7 @@ const isDisabled = (props) => {
     `;
   }
 };
+
 export const AddProductModalContainer = styled.div`
   position: fixed;
   z-index: 18;
@@ -53,6 +54,21 @@ export const AddProductModalContainer = styled.div`
     width: 80%;
   }
   margin: 15px 15px;
+`;
+
+export const CloseIconButton = styled.button`
+  background: white;
+  color: black;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 8px 14px;
+  :active {
+    background: black;
+    border: 1px solid white;
+    color: white;
+  }
 `;
 
 export const AddProductTitle = styled.div`

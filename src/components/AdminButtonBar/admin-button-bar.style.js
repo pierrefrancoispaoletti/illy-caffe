@@ -18,4 +18,7 @@ export const AdminButton = styled.button`
   border-radius: 50px;
   padding: 12px;
   background: white;
+  :active {
+    background: black;
+  }
 `;

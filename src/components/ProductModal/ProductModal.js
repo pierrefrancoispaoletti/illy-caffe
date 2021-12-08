@@ -18,6 +18,7 @@ import { placeLocation } from "../../_const";
 import {
   AddProductModalContainer,
   AddProductTitle,
+  CloseIconButton,
 } from "./product-modal.style";
 
 const ProductModal = ({ currentCategory }) => {
@@ -62,11 +63,12 @@ const ProductModal = ({ currentCategory }) => {
     <AddProductModalContainer open={open}>
       <AddProductTitle>
         <h3>{`${type?.toUpperCase()} dans ${currentCategory}`}</h3>
-        <FontAwesomeIcon
-          icon={faTimes}
-          size="1x"
+        <CloseIconButton
+          type="button"
           onClick={() => dispatch(toggleModal(type))}
-        />
+        >
+          <FontAwesomeIcon icon={faTimes} size="1x" />
+        </CloseIconButton>
       </AddProductTitle>
       <ProductModalForm
         type={type}
