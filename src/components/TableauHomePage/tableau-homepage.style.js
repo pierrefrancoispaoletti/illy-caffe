@@ -93,6 +93,9 @@ export const TableauContent = styled.div`
     font-family: "ChalkAboutItalic";
     font-weight: 400;
     font-size: 2rem;
+    @media (max-width: 370px) {
+      font-size: 1.5rem;
+    }
   }
 
   .description {

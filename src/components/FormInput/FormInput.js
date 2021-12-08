@@ -7,13 +7,14 @@ import {
 } from "./form-input.style";
 
 const FormInput = ({ handleChange, label, ...others }) => {
+  console.log(others, label, String(others.value).length);
   return (
     <GroupContainer>
       <FormInputContainer onChange={handleChange} {...others} />
       {label && (
         <LabelContainer
           className={`${
-            others?.value?.length ? "shrink" : ""
+            String(others?.value)?.length ? "shrink" : ""
           } form-input-label`}
         >
           {label}

@@ -6,9 +6,10 @@ import CategorySelector from "../CategorySelector/CategorySelector";
 import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
 import LocalMessage from "../LocalMessage/LocalMessage";
-const Home = lazy(() => import("../../pages/Home/Home"));
 const Login = lazy(() => import("../../pages/Login/Login"));
-const Products = lazy(() => import("../../pages/Products/Products"));
+const ProductsPage = lazy(() =>
+  import("../../pages/ProductsPage/ProductsPage")
+);
 const App = () => {
   const user = useSelector(selectCurrentUser);
   const [loading, setLoading] = useState(false);
@@ -21,12 +22,15 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Home loading={loading} setLoading={setLoading} />}
-          />
-          <Route
-            path={`products/:category`}
-            element={<Products loading={loading} setLoading={setLoading} />}
-          />
+            element={<ProductsPage loading={loading} setLoading={setLoading} />}
+          >
+            <Route
+              path={`products/:category`}
+              element={
+                <ProductsPage loading={loading} setLoading={setLoading} />
+              }
+            />
+          </Route>
           <Route
             path="connexion"
             element={
