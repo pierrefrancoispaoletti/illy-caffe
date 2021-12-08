@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { colors } from "../../_const";
 
 const modalColorType = (props) => {
   switch (props.modalType.toLowerCase()) {
@@ -6,13 +7,13 @@ const modalColorType = (props) => {
       return css`
         border: 3px solid green;
         background: lightgreen;
-        color: white;
+        color: ${colors.main};
       `;
     case "editer":
       return css`
-        border: 3px solid white;
+        border: 3px solid ${colors.main};
         background: purple;
-        color: white;
+        color: ${colors.main};
       `;
     default:
       return css`
@@ -47,7 +48,7 @@ export const AddProductModalContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   border-radius: 12px;
-  border: 2px solid #fe0000;
+  border: 2px solid ${colors.main};
   align-items: center;
   ${isShownModal}
   & > form {
@@ -57,7 +58,7 @@ export const AddProductModalContainer = styled.div`
 `;
 
 export const CloseIconButton = styled.button`
-  background: white;
+  background: ${colors.main};
   color: black;
   font-size: 1.3em;
   font-weight: bold;
@@ -66,8 +67,8 @@ export const CloseIconButton = styled.button`
   padding: 8px 14px;
   :active {
     background: black;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid ${colors.secondary};
+    color: ${colors.secondary};
   }
 `;
 

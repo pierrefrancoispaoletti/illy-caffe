@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../_const";
 
 export const AdminButtonBarContainer = styled.div`
   margin: 12px 0px;
@@ -17,7 +18,7 @@ export const AdminButton = styled.button`
   outline: none;
   border-radius: 50px;
   padding: 12px;
-  background: white;
+  background: ${colors.main};
   :active {
     background: black;
   }

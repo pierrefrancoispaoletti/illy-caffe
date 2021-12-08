@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { colors } from "../../_const";
 
 export const CategoriesContainer = styled.nav`
   display: flex;
@@ -23,11 +24,11 @@ export const CategoryItem = styled.li`
   min-width: 60px;
   height: 60px;
   margin: 0px 8px;
-  background: #fdfdfd;
-  border: 1px solid #fe0000;
+  background: ${colors.main};
+  border: 1px solid ${colors.secondary};
   border-radius: 12px;
   padding: 6px;
-  box-shadow: 0px 9px 23px -5px rgba(0, 0, 0, 0.58);
+  box-shadow: 0px 9px 15px -5px rgba(0, 0, 0, 0.58);
   transition: all 0.5s;
 `;
 
@@ -45,13 +46,13 @@ export const CategoryTitle = styled.span`
 
 export const LinkContainer = styled(NavLink)`
   text-decoration: none;
-  color: #fe0000;
+  color: ${colors.secondary};
   &.active {
     text-decoration: underline;
     & > li {
-      background: #fe0000;
-      border: 1px solid #fdfdfd;
-      color: #fdfdfd;
+      background: ${colors.secondary};
+      border: 1px solid ${colors.main};
+      color: ${colors.main};
     }
   }
 `;

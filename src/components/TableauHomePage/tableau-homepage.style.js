@@ -1,10 +1,17 @@
 import styled, { css } from "styled-components";
+import { colors } from "../../_const";
 
 const contentVisible = (props) => {
   if (!props.visible)
     return css`
       display: none;
     `;
+};
+
+const playAnimation = (props) => {
+  if (props.transition) {
+    return "runing";
+  }
 };
 
 const getWineColor = (props) => {
@@ -30,6 +37,7 @@ export const TableauContainer = styled.div`
   border: 14px solid #deb887;
   margin: 12px;
   box-shadow: 0px 9px 23px -5px rgba(0, 0, 0, 0.58);
+  perspective: 1500px;
 `;
 
 export const TableauWrapper = styled.div`
@@ -38,13 +46,27 @@ export const TableauWrapper = styled.div`
   align-items: center;
   background-color: #484b56;
   min-height: 80vh;
+  border: 1px solid black;
+  box-shadow: 0px 0px 12px 0px rgba(255, 255, 255, 0.58) inset;
+  animation: blurringArray 1.5s ease-in-out ${playAnimation};
+  @keyframes blurringArray {
+    0% {
+      filter: blur(10px);
+    }
+    0% {
+      filter: blur(5px);
+    }
+    100% {
+      filter: blur(0);
+    }
+  }
 `;
 
 export const TableauTitle = styled.h2`
   position: relative;
   font-family: "crayonHand";
   font-size: 2.6em;
-  color: #fdfdfd;
+  color: ${colors.main};
   text-align: center;
   text-decoration: underline;
   letter-spacing: 10px;
@@ -62,7 +84,7 @@ export const TableauContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   line-height: 36px;
-  color: #fdfdfd;
+  color: ${colors.main};
   margin: 0px 1.5em;
   text-align: center;
   font-size: 1.8rem;
@@ -77,7 +99,7 @@ export const TableauContent = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    color: #fdfdfd;
+    color: ${colors.main};
     letter-spacing: 2px;
     font-size: 2rem;
     text-transform: uppercase;
@@ -128,14 +150,14 @@ export const WinePriceElement = styled.span`
 
 export const WineItemElement = styled.span`
   padding: 6px 8px;
-  border: 3px solid white;
+  border: 3px solid ${colors.main};
   border-radius: 50px;
   display: inline-block;
   margin-right: 1em;
   background: grey;
   font-size: 0.7em;
   :active {
-    background: white;
+    background: ${colors.main};
     border: 3px solid black;
   }
   ${getWineColor}

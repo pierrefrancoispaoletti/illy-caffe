@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   TableauContainer,
   TableauWrapper,
@@ -18,9 +18,16 @@ const TableauHomePage = ({ children }) => {
   );
   const user = useSelector(selectCurrentUser);
 
+  let prevlocationValueRef = useRef(null);
+
+  useEffect(() => {
+    prevlocationValueRef.current = location.pathname;
+  });
+  const prevlocationValue = prevlocationValueRef.current;
+
   return (
     <TableauContainer>
-      <TableauWrapper>
+      <TableauWrapper transition={prevlocationValue !== location.pathname}>
         <TableauTitle>{findCategory?.name}</TableauTitle>
         {user && user.role === "isAdmin" && (
           <>

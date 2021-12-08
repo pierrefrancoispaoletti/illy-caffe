@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../_const";
 
 export const HeaderContainer = styled.header`
   position: relative;
@@ -8,7 +9,7 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   border-bottom: 3px solid black;
   border-radius: 0 0 50px 50px;
-  background: linear-gradient(to right, #fdfdfd, #fe0000);
+  background: linear-gradient(to right, ${colors.main}, ${colors.secondary});
   background-size: 400% 400%;
   animation: backgroundMoving 25s infinite ease;
   @keyframes backgroundMoving {
@@ -29,6 +30,6 @@ export const HeaderTitle = styled.div`
   position: absolute;
   top: 70%;
   font-size: 2.5em;
-  color: black;
-  font-weight: bold;
+  color: ${colors.main};
+  font-weight: 200;
 `;

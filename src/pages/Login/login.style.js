@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { colors } from "../../_const";
 
 const isDisabled = (props) => {
   if (props.disabled) {
@@ -15,7 +16,7 @@ export const LoginContainer = styled.div`
   justify-content: center;
   border-radius: 50px;
   margin: 12px;
-  background: linear-gradient(to right, #fdfdfd, #fe0000);
+  background: linear-gradient(to right, ${colors.main}, ${colors.secondary});
   background-size: 400% 400%;
   padding-bottom: 12px;
   animation: backgroundMoving 25s infinite ease;
@@ -31,7 +32,7 @@ export const LoginContainer = styled.div`
     }
   }
   & > h2 {
-    color: #fdfdfd;
+    color: ${colors.main};
   }
 `;
 
@@ -46,9 +47,9 @@ export const LoginButton = styled.button`
   font-size: 2em;
   background-color: transparent;
   outline: none;
-  color: #fdfdfd;
-  border: 3px solid #fdfdfd;
+  color: ${colors.main};
+  border: 3px solid ${colors.main};
   border-radius: 50px;
-  background: #fe0000;
+  background: ${colors.secondary};
   ${isDisabled}
 `;

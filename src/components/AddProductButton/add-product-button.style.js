@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../_const";
 
 export const AddProductButtonStyled = styled.button`
   background: lightGreen;
@@ -8,6 +9,6 @@ export const AddProductButtonStyled = styled.button`
   transition: all 0.1s ease-in-out;
   :active {
     background: green;
-    color: white;
+    color: ${colors.secondary};
   }
 `;

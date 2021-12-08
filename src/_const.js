@@ -5,6 +5,6 @@ export let serverURI =
     : "https://young-badlands-89715.herokuapp.com";
 
 export const colors = {
-  main: "#fdfdfd",
-  secondary: "#fe0000",
+  main: "#fdfdfd", //white
+  secondary: "#fe0000", //red
 };

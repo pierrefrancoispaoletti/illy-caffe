@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../_const";
 
 export const LoaderContainer = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ export const LoaderContainer = styled.div`
   letter-spacing: 8px;
   span {
     font-size: 2.5em;
-    color: #fdfdfd;
+    color: ${colors.main};
     font-family: "ChalkAbout";
     :nth-child(n) {
       animation: evenCharacterAnimation 0.7s linear infinite;
