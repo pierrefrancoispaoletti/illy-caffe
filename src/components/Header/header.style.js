@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
   padding: 12px 12px 36px 12px;
   display: flex;
   justify-content: center;
-  border-bottom: 3px solid black;
+  /* border-bottom: 3px solid black; */
   border-radius: 0 0 50px 50px;
   background: linear-gradient(to right, ${colors.main}, ${colors.secondary});
   background-size: 400% 400%;
@@ -23,7 +23,7 @@ export const HeaderContainer = styled.header`
       background-position: 92% 0%;
     }
   }
-  box-shadow: 0px 9px 23px -5px rgba(0, 0, 0, 0.58);
+  /* box-shadow: 0px 9px 23px -5px rgba(0, 0, 0, 0.58); */
 `;
 
 export const HeaderTitle = styled.div`
