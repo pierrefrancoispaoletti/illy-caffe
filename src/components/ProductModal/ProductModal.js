@@ -20,6 +20,8 @@ import {
   AddProductTitle,
   CloseIconButton,
 } from "./product-modal.style";
+import { categories } from "../../data/categories/categories";
+import SubCategoryPartProductModal from "../SubCategoryPartProductModal/SubCategoryPart.ProductModal";
 
 const ProductModal = ({ currentCategory }) => {
   const { type, open } = useSelector(selectModalType);
@@ -39,6 +41,7 @@ const ProductModal = ({ currentCategory }) => {
       { value: "blanc", isChecked: false, price: "" },
       { value: "rosé", isChecked: false, price: "" },
     ],
+    subCategory: "",
   };
 
   const [product, setProduct] = useState(initialState);
@@ -58,6 +61,10 @@ const ProductModal = ({ currentCategory }) => {
       }));
     }
   }, [currentCategory, productToEdit, type, open]);
+
+  const currentCategoryObject = categories.find(
+    (category) => category.slug === currentCategory
+  );
 
   return (
     <AddProductModalContainer open={open}>
@@ -81,6 +88,13 @@ const ProductModal = ({ currentCategory }) => {
           <WinePartProductModal
             couleur={product.couleur}
             setProduct={setProduct}
+          />
+        )}
+        {currentCategoryObject.subCategory && (
+          <SubCategoryPartProductModal
+            subCategories={currentCategoryObject.subCategory}
+            setProduct={setProduct}
+            subCategory={product.subCategory}
           />
         )}
       </ProductModalForm>

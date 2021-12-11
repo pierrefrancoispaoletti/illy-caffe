@@ -16,3 +16,12 @@ export const selectProductToEdit = createSelector(
   [selectProducts],
   ({ productToEdit }) => productToEdit
 );
+
+export const selectProductsBySubCategory = (filter) =>
+  createSelector([selectProductsByCategory], (products) =>
+    filter
+      ? products.filter((product) =>
+          product.subCategory ? product.subCategory === filter : product
+        )
+      : products
+  );

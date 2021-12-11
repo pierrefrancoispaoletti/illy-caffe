@@ -1,10 +1,9 @@
 import {
-  faCheeseburger,
-  faCocktail,
   faGlass,
   faHatChef,
+  faCoffee,
   faMugHot,
-  faStroopwafel,
+  faMugTea,
   faWineBottle,
 } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,34 +16,45 @@ export const categories = [
     slug: "today",
   },
   {
-    name: "Burgers",
-    icon: <FontAwesomeIcon icon={faCheeseburger} size="2x" />,
-    link: "/products/burgers",
-    slug: "burgers",
+    name: "Le Café",
+    icon: <FontAwesomeIcon icon={faCoffee} size="2x" />,
+    link: "/products/le-cafe",
+    slug: "le-cafe",
+    subCategory: [
+      { name: "Classiques", slug: "classiques" },
+      { name: "Spéciaux", slug: "spéciaux" },
+      { name: "Monoarabica", slug: "monoarabica" },
+      { name: "Recettes-Froides", slug: "recettes-froides" },
+      { name: "IllyCrema", slug: "illy-crema" },
+    ],
   },
   {
-    name: "Gauffres",
-    icon: <FontAwesomeIcon icon={faStroopwafel} size="2x" />,
-    link: "/products/gauffres",
-    slug: "gauffres",
-  },
-  {
-    name: "Le Chaud",
+    name: "Le Chocolat",
     icon: <FontAwesomeIcon icon={faMugHot} size="2x" />,
-    link: "/products/le-chaud",
-    slug: "le-chaud",
+    link: "/products/le-chocolat",
+    slug: "le-chocolat",
+    subCategory: [
+      { name: "Classiques", slug: "classiques" },
+      { name: "Domori", slug: "domori" },
+    ],
+  },
+  {
+    name: "Le Thé",
+    icon: <FontAwesomeIcon icon={faMugTea} size="2x" />,
+    link: "/products/le-the",
+    slug: "le-the",
   },
   {
     name: "Le Froid",
     icon: <FontAwesomeIcon icon={faGlass} size="2x" />,
     link: "/products/le-froid",
     slug: "le-froid",
-  },
-  {
-    name: "Cocktails",
-    icon: <FontAwesomeIcon icon={faCocktail} size="2x" />,
-    link: "/products/cocktails",
-    slug: "cocktail",
+    subCategory: [
+      { name: "Eaux", slug: "eaux" },
+      { name: "Softs", slug: "softs" },
+      { name: "Granita", slug: "granita" },
+      { name: "Bières", slug: "bieres" },
+    ],
   },
   {
     name: "Le Vin",

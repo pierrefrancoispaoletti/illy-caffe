@@ -26,6 +26,7 @@ const ProductModalForm = ({
     location,
     visible,
     couleur,
+    subCategory,
   } = product;
 
   const clearState = () => setProduct({ ...initialState });
@@ -45,6 +46,7 @@ const ProductModalForm = ({
       location,
       visible,
       couleur,
+      subCategory,
     };
     if (type === "ajouter") {
       addProduct(newProduct, dispatch, token).then(() => clearState());

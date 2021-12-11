@@ -221,3 +221,22 @@ export const WineItemElement = styled.span`
     margin-right: 0;
   }
 `;
+
+export const SubCategoryFilterContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: ${colors.main};
+  font-family: "crayonHand";
+  font-size: 1.5em;
+  transition: all 0.5s ease;
+  margin: 12px;
+  .selected {
+    text-decoration: underline;
+  }
+  span {
+    display: inline-block;
+    margin: 6px;
+  }
+`;
