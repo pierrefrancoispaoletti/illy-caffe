@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/illy-caffe/static/css/main.2c529301.chunk.css",
-    "main.js": "/illy-caffe/static/js/main.f6fe63ae.chunk.js",
-    "main.js.map": "/illy-caffe/static/js/main.f6fe63ae.chunk.js.map",
+    "main.js": "/illy-caffe/static/js/main.5647a1fa.chunk.js",
+    "main.js.map": "/illy-caffe/static/js/main.5647a1fa.chunk.js.map",
     "runtime-main.js": "/illy-caffe/static/js/runtime-main.43016b82.js",
     "runtime-main.js.map": "/illy-caffe/static/js/runtime-main.43016b82.js.map",
     "static/js/2.da56529a.chunk.js": "/illy-caffe/static/js/2.da56529a.chunk.js",
@@ -29,6 +29,6 @@
     "static/js/runtime-main.43016b82.js",
     "static/js/2.da56529a.chunk.js",
     "static/css/main.2c529301.chunk.css",
-    "static/js/main.f6fe63ae.chunk.js"
+    "static/js/main.5647a1fa.chunk.js"
   ]
 }
