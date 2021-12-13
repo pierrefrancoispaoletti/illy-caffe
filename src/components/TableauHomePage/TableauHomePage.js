@@ -3,7 +3,7 @@ import {
   TableauContainer,
   TableauWrapper,
   TableauTitle,
-  SubCategoryFilterContainer,
+  TableauLegend,
 } from "./tableau-homepage.style";
 import { useLocation } from "react-router-dom";
 import { categories } from "../../data/categories/categories";
@@ -11,6 +11,7 @@ import AddProductButton from "../AddProductButton/AddProductButton";
 import ProductModal from "../ProductModal/ProductModal";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/reducers/User/selector";
+import SubCategorySelector from "../SubCategorySelector/SubCategorySelector";
 
 const TableauHomePage = ({ setFilter, children, filter }) => {
   const location = useLocation();
@@ -26,32 +27,34 @@ const TableauHomePage = ({ setFilter, children, filter }) => {
   const prevlocationValue = prevlocationValueRef.current;
 
   return (
-    <TableauContainer>
+    <TableauContainer
+      className="tableau-homepage"
+      illy={
+        findCategory?.slug === "le-cafe" ||
+        findCategory?.slug === "le-chocolat" ||
+        findCategory?.slug === "le-the"
+          ? true
+          : false
+      }
+    >
       <TableauWrapper
         transition={prevlocationValue !== location.pathname}
-        transitionType="scale"
+        transitionType=""
       >
         <TableauTitle>{findCategory?.name}</TableauTitle>
-        {findCategory?.subCategory && (
-          <SubCategoryFilterContainer>
-            <span
-              className={`${filter === "" ? "selected" : ""}`}
-              onClick={() => setFilter("")}
-            >
-              Tous
-            </span>
-            {findCategory?.subCategory?.map((sub) => (
-              <span
-                className={`${filter === sub.slug ? "selected" : ""}`}
-                slug={sub.slug}
-                key={sub.name}
-                onClick={() => setFilter(sub.slug)}
-              >
-                {sub.name}
-              </span>
-            ))}
-          </SubCategoryFilterContainer>
+        {findCategory?.logo && (
+          <img
+            width={findCategory?.width}
+            src={findCategory?.logo}
+            alt={findCategory?.alt}
+          />
         )}
+        <TableauLegend>{findCategory?.legend}</TableauLegend>
+        <SubCategorySelector
+          filter={filter}
+          findCategory={findCategory}
+          setFilter={setFilter}
+        />
         {user && user.role === "isAdmin" && (
           <div style={{ position: "relative" }}>
             <AddProductButton />

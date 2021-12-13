@@ -1,6 +1,60 @@
 import styled, { css } from "styled-components";
 import { colors } from "../../_const";
 
+const isIlly = (props) => {
+  if (props.illy) {
+    return css`
+      div {
+        background: ${colors.main};
+        position: relative;
+        color: black;
+        font-family: unset;
+        .subcategory {
+          color: ${colors.secondary};
+          font-family: unset;
+        }
+        & > .title {
+          color: ${colors.secondary};
+          font-family: unset;
+          font-weight: 300;
+          font-size: 1.2rem;
+          margin: 12px auto;
+          & > .price {
+            color: black;
+            font-family: unset;
+            border-bottom: 1px solid ${colors.secondary};
+            font-size: 1rem;
+            font-style: italic;
+          }
+        }
+        & > .description {
+          text-align: center;
+          font-weight: 300;
+          @media (min-width: 420px) {
+            text-align: left;
+          }
+        }
+        & > .menu {
+          color: ${colors.secondary};
+          border: 1px solid ${colors.secondary};
+          :not(:first-child) span {
+            margin-right: 3px;
+          }
+        }
+        & > .selected {
+          background: ${colors.secondary};
+          color: ${colors.main};
+        }
+      }
+      h2 {
+        color: ${colors.secondary};
+        font-family: unset;
+        font-weight: 200;
+      }
+    `;
+  }
+};
+
 const contentVisible = (props) => {
   if (!props.visible)
     return css`
@@ -86,11 +140,23 @@ const getWineColor = (props) => {
 };
 
 export const TableauContainer = styled.div`
-  border: 14px solid #deb887;
+  border: ${(props) =>
+    props.illy ? `14px solid ${colors.secondary}` : "14px solid #deb887"};
   margin: 0px 8px;
   box-shadow: 0px 9px 23px -5px rgba(0, 0, 0, 0.58);
   perspective: 1500px;
   background: #484b56;
+  .subcategory {
+    margin-top: 12px;
+    text-align: center;
+    display: block;
+    font-size: 2.2em;
+    color: ${colors.main};
+    font-family: "crayonHand";
+    text-transform: uppercase;
+    font-weight: 200;
+  }
+  ${isIlly}
 `;
 
 export const TableauWrapper = styled.div`
@@ -100,6 +166,7 @@ export const TableauWrapper = styled.div`
   background-color: #484b56;
   min-height: 80vh;
   ${getTransitionType}
+  ${isIlly}
 `;
 
 export const TableauTitle = styled.h2`
@@ -109,12 +176,18 @@ export const TableauTitle = styled.h2`
   margin-bottom: 12px;
   color: ${colors.main};
   text-align: center;
-  text-decoration: underline;
   letter-spacing: 10px;
   overflow-wrap: anywhere;
   @media (max-width: 379px) {
     font-size: 1.9em;
   }
+`;
+
+export const TableauLegend = styled.p`
+  margin: 8px 12px;
+  text-align: center;
+  line-height: 1.6;
+  color: ${colors.secondary};
 `;
 
 export const TableauContent = styled.div`
@@ -126,7 +199,7 @@ export const TableauContent = styled.div`
   align-items: flex-start;
   line-height: 36px;
   color: ${colors.main};
-  margin: 0px 1.5em;
+  margin: auto;
   text-align: center;
   font-size: 1.8rem;
   @media (max-width: 420px) {
@@ -144,7 +217,8 @@ export const TableauContent = styled.div`
     letter-spacing: 2px;
     font-size: 1.5rem;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    font-size: 1.2rem;
+    margin: 12px auto;
     & > span {
       max-width: 50%;
       text-align: left;
@@ -175,6 +249,7 @@ export const TableauContent = styled.div`
   .description {
     text-align: center;
     margin: 0;
+    font-size: 1.2rem;
   }
 
   .wine-color {
@@ -229,14 +304,60 @@ export const SubCategoryFilterContainer = styled.div`
   flex-wrap: wrap;
   color: ${colors.main};
   font-family: "crayonHand";
-  font-size: 1.5em;
+  font-size: 1em;
   transition: all 0.5s ease;
-  margin: 12px;
-  .selected {
-    text-decoration: underline;
+  margin: 8px auto;
+  @media (max-width: 400px) {
+    flex-direction: column;
   }
-  span {
-    display: inline-block;
+  .selected {
+    z-index: 10;
+    text-decoration: underline 2px;
+    background: ${colors.main};
+    color: #484b56;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    animation: moveAndScale 0.2s ease-in-out;
+    @keyframes moveAndScale {
+      0% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-10px) scale(1.1);
+      }
+      75% {
+        transform: translateY(10px) scale(1.2);
+      }
+      100% {
+        transform: translateY(0px) scale(1.1);
+      }
+    }
+    @-webkit-keyframes moveAndScale {
+      0% {
+        -webkit-transform: translateY(0px) scale(1);
+      }
+      50% {
+        -webkit-transform: translateY(-10px) scale(1.1);
+      }
+      75% {
+        -webkit-transform: translateY(10px) scale(1.2);
+      }
+      100% {
+        -webkit-transform: translateY(0px) scale(1.1);
+      }
+    }
+  }
+  .menu {
     margin: 6px;
+    cursor: pointer;
+    align-self: center;
+    vertical-align: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid ${colors.main};
+    border-radius: 50px;
+    padding: 5px;
   }
 `;

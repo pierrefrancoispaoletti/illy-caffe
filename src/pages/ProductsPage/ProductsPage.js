@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ProductOverview from "../../components/ProductOverview/ProductOverview";
 import { selectProductsBySubCategory } from "../../redux/reducers/Products/selectors";
@@ -8,6 +8,11 @@ const ProductsPage = ({ loading, setLoading }) => {
   useFetchProducts(setLoading);
   const [filter, setFilter] = useState("");
   const products = useSelector(selectProductsBySubCategory(filter));
+
+  useEffect(() => {
+    setFilter("");
+  }, [loading]);
+
   return (
     <main>
       <ProductOverview

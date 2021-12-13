@@ -7,42 +7,19 @@ import {
   faWineBottle,
 } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LogoIlly from "../../assets/images/logo.jpg";
+import LogoDomori from "../../assets/images/domori.jpg";
+import LogoDomori2 from "../../assets/images/domori-logo2.png";
+import LogoDamman from "../../assets/images/damman.png";
+import { colors } from "../../_const";
 
+const logoSmall = "20px";
 export const categories = [
   {
     name: "Aujourd'hui",
     icon: <FontAwesomeIcon icon={faHatChef} size="2x" />,
     link: "/",
     slug: "today",
-  },
-  {
-    name: "Le Café",
-    icon: <FontAwesomeIcon icon={faCoffee} size="2x" />,
-    link: "/products/le-cafe",
-    slug: "le-cafe",
-    subCategory: [
-      { name: "Classiques", slug: "classiques" },
-      { name: "Spéciaux", slug: "spéciaux" },
-      { name: "Monoarabica", slug: "monoarabica" },
-      { name: "Recettes-Froides", slug: "recettes-froides" },
-      { name: "IllyCrema", slug: "illy-crema" },
-    ],
-  },
-  {
-    name: "Le Chocolat",
-    icon: <FontAwesomeIcon icon={faMugHot} size="2x" />,
-    link: "/products/le-chocolat",
-    slug: "le-chocolat",
-    subCategory: [
-      { name: "Classiques", slug: "classiques" },
-      { name: "Domori", slug: "domori" },
-    ],
-  },
-  {
-    name: "Le Thé",
-    icon: <FontAwesomeIcon icon={faMugTea} size="2x" />,
-    link: "/products/le-the",
-    slug: "le-the",
   },
   {
     name: "Le Froid",
@@ -61,5 +38,88 @@ export const categories = [
     icon: <FontAwesomeIcon icon={faWineBottle} size="2x" />,
     link: "/products/le-vin",
     slug: "le-vin",
+  },
+  {
+    name: "Le Café",
+    icon: <FontAwesomeIcon icon={faCoffee} size="2x" />,
+    link: "/products/le-cafe",
+    logo: LogoIlly,
+    alt: "Logo Illy",
+    width: "50px",
+    widthCategorySelector: "30px",
+    slug: "le-cafe",
+    subCategory: [
+      {
+        name: "Les Classiques",
+        slug: "classiques",
+        logo: LogoIlly,
+        alt: "Logo Illy",
+        width: logoSmall,
+      },
+      {
+        name: "Les Spéciaux",
+        slug: "spéciaux",
+        logo: LogoIlly,
+        alt: "Logo Illy",
+        width: logoSmall,
+      },
+      {
+        name: "Les Monoarabica",
+        slug: "monoarabica",
+        logo: LogoIlly,
+        alt: "Logo Illy",
+        width: logoSmall,
+      },
+      {
+        name: "Les Recettes Froides",
+        slug: "recettes-froides",
+        logo: LogoIlly,
+        alt: "Logo Illy",
+        width: logoSmall,
+      },
+      {
+        name: "IllyCrema",
+        slug: "illy-crema",
+        logo: LogoIlly,
+        alt: "Logo Illy",
+        width: logoSmall,
+      },
+    ],
+  },
+  {
+    name: "Le Chocolat",
+    icon: <FontAwesomeIcon icon={faMugHot} size="2x" />,
+    logo: LogoDomori,
+    logoAlt: LogoDomori2,
+    alt: "Logo Domori",
+    width: "60px",
+    widthCategorySelector: "29px",
+    style: { position: "relative", top: "5px", left: 0, right: 0 },
+    legend: "Illy Caffè ne travaille qu'avec les chocolats Domori.",
+    link: "/products/le-chocolat",
+    slug: "le-chocolat",
+    subCategory: [
+      { name: "Les Classiques", slug: "classiques" },
+      {
+        name: "Les Domori",
+        slug: "domori",
+        logo: LogoDomori,
+        alt: "Logo Illy",
+        width: logoSmall,
+      },
+    ],
+  },
+  {
+    name: "Thés et Infusions",
+    logo: LogoDamman,
+    alt: "Logo Damman",
+    width: "100px",
+    widthCategorySelector: "60px",
+    style: { background: colors.main },
+    legend:
+      "Illy à une façon nouvelle et originale de vous surprendre, illy Caffè propose les thés Damann Frères. Importateur europées des meilleurs thés depuis 1692.",
+    icon: <FontAwesomeIcon icon={faMugTea} size="2x" />,
+    link: "/products/le-the",
+    slug: "le-the",
   },
 ];
