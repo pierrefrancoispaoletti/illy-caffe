@@ -8,12 +8,21 @@ import {
 const SubCategorySelector = ({ filter, findCategory, setFilter }) => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    if (!open) {
-      setFilter("");
+    let selectedElement = document.querySelector(".menu.selected");
+    let firstElement = document.querySelector(".menu");
+    if (selectedElement && open) {
+      firstElement?.before(selectedElement);
     }
-  }, [open, setFilter]);
+    if (selectedElement && !open) {
+      firstElement?.replaceWith(selectedElement);
+    }
+  });
   return (
-    <SubCategoryFilterContainer className={open ? "isOpen" : ""}>
+    <SubCategoryFilterContainer
+      className={
+        open ? "subcategory-container isOpen" : "subcategory-container"
+      }
+    >
       <div
         className={`${filter === "" ? " menu selected" : "menu"}`}
         onClick={() => setFilter("")}
@@ -23,7 +32,6 @@ const SubCategorySelector = ({ filter, findCategory, setFilter }) => {
       {open &&
         findCategory?.subCategory?.map((sub, index) => (
           <div
-            identifier={index + 1}
             key={sub.name}
             className={`${filter === sub.slug ? "menu selected" : "menu"}`}
             onClick={() => setFilter(sub.slug)}
