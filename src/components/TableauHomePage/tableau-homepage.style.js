@@ -5,7 +5,7 @@ import { colors } from "../../_const";
 const isIlly = (props) => {
   if (props.illy) {
     return css`
-      div {
+      div:not(.modal) {
         background: ${colors.main};
         position: relative;
         color: black;

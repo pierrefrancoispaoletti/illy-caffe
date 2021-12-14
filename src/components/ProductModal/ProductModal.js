@@ -67,7 +67,7 @@ const ProductModal = ({ currentCategory }) => {
   );
 
   return (
-    <AddProductModalContainer open={open}>
+    <AddProductModalContainer open={open} className="modal">
       <AddProductTitle>
         <h3>{`${type?.toUpperCase()} dans ${currentCategory}`}</h3>
         <CloseIconButton
