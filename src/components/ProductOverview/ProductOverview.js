@@ -22,7 +22,6 @@ const ProductOverview = ({ loading, products, setFilter, filter }) => {
   }, []);
 
   useEffect(() => {
-    console.log("here");
     const removeDuplicateSpans = (classname) => {
       let spans = document.querySelectorAll(`.${classname}`);
       spans.forEach((element, index) => {

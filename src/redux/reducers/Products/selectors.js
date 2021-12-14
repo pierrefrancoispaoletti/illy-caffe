@@ -21,7 +21,7 @@ const selectProducts = (state) => state.products;
 
 export const selectProductsByCategory = createSelector(
   [selectProducts],
-  ({ products }) => products.sort((a, b) => (b.price > a.price ? -1 : 1))
+  ({ products }) => products.sort((a, b) => (a.title < b.title ? -1 : 1))
 );
 
 export const selectModalType = createSelector(
@@ -47,7 +47,7 @@ export const selectProductsBySubCategory = (filter) =>
           );
 
           if (index_result === 0) {
-            return compare(a.title, b.title);
+            return compare(a.price, b.price);
           }
 
           return index_result;
