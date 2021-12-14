@@ -21,7 +21,7 @@ const selectProducts = (state) => state.products;
 
 export const selectProductsByCategory = createSelector(
   [selectProducts],
-  ({ products }) => products.sort((a, b) => (a.title < b.title ? -1 : 1))
+  ({ products }) => products
 );
 
 export const selectModalType = createSelector(

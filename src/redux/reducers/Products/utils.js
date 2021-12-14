@@ -1,3 +1,5 @@
+import { categories } from "../../../data/categories/categories";
+
 export const filteredProductsList = (actionType, state, payload) => {
   switch (actionType) {
     case "ADD_PRODUCT":
@@ -15,4 +17,21 @@ export const filteredProductsList = (actionType, state, payload) => {
     default:
       return state.products;
   }
+};
+
+export const findSubCategoryName = (product) => {
+  let scSlug;
+  let categoryName = categories
+    .map(
+      (category) =>
+        category?.slug === product?.category &&
+        category?.subCategory?.find((sc) => {
+          if (sc?.slug === product?.subCategory) {
+            scSlug = sc?.slug;
+          }
+          return sc?.slug === product?.subCategory;
+        })
+    )
+    .filter((p) => p)[0]?.name;
+  return <span className={`subcategory ${scSlug}`}>{categoryName}</span>;
 };

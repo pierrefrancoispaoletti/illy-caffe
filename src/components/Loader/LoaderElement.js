@@ -3,7 +3,7 @@ import { LoaderContainer } from "./Loader.style";
 
 const LoaderElement = () => {
   return (
-    <LoaderContainer>
+    <LoaderContainer className="loader">
       <span>C</span>
       <span>H</span>
       <span>A</span>

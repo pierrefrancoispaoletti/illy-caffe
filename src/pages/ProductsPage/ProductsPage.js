@@ -3,9 +3,11 @@ import { useSelector } from "react-redux";
 import ProductOverview from "../../components/ProductOverview/ProductOverview";
 import { selectProductsBySubCategory } from "../../redux/reducers/Products/selectors";
 import useFetchProducts from "../../useFetchProducts/useFetchProducts";
+import useRemoveDuplicateSpans from "../../useRemoveDuplicateSpans/useRemoveDuplicateSpans";
 
 const ProductsPage = ({ loading, setLoading }) => {
   useFetchProducts(setLoading);
+  useRemoveDuplicateSpans();
   const [filter, setFilter] = useState("");
   const products = useSelector(selectProductsBySubCategory(filter));
 

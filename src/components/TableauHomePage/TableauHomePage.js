@@ -50,11 +50,13 @@ const TableauHomePage = ({ setFilter, children, filter }) => {
           />
         )}
         <TableauLegend>{findCategory?.legend}</TableauLegend>
-        <SubCategorySelector
-          filter={filter}
-          findCategory={findCategory}
-          setFilter={setFilter}
-        />
+        {findCategory?.subCategory && (
+          <SubCategorySelector
+            filter={filter}
+            findCategory={findCategory}
+            setFilter={setFilter}
+          />
+        )}
         {user && user.role === "isAdmin" && (
           <div style={{ position: "relative" }}>
             <AddProductButton />

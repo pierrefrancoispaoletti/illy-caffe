@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled, { css } from "styled-components";
 import { colors } from "../../_const";
 
@@ -12,6 +13,25 @@ const isIlly = (props) => {
         .subcategory {
           color: ${colors.secondary};
           font-family: unset;
+        }
+        .chevron {
+          color: ${colors.secondary};
+          border: 1px solid ${colors.secondary};
+          animation: scalingChevronIlly 1.5s infinite linear alternate;
+          @keyframes scalingChevronIlly {
+            0% {
+                background: inherit
+                transform: scale(1);
+                }
+            100% {
+                background: ${colors.secondary};
+                color: ${colors.main};
+                transform: scale(1.2);
+                }
+              }
+        }
+        & > .loader > span {
+          color: ${colors.secondary};
         }
         & > .title {
           color: ${colors.secondary};
@@ -238,9 +258,9 @@ export const TableauContent = styled.div`
     font-family: "ChalkAboutItalic";
     font-weight: 400;
     :not(.wineprice) {
-      border-bottom: 3px solid ${colors.main};
+      border-bottom: 1px solid ${colors.main};
     }
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     @media (max-width: 370px) {
       font-size: 1.5rem;
     }
@@ -249,7 +269,7 @@ export const TableauContent = styled.div`
   .description {
     text-align: center;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .wine-color {
@@ -300,16 +320,32 @@ export const WineItemElement = styled.span`
 export const SubCategoryFilterContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   color: ${colors.main};
   font-family: "crayonHand";
   font-size: 1em;
   transition: all 0.5s ease;
   margin: 8px auto;
-  @media (max-width: 400px) {
-    flex-direction: column;
+
+  @keyframes appearSubCategory {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
+
+  &.isOpen {
+    .menu:not(:first-child) {
+      display: flex;
+      animation: appearSubCategory 0.1s ease-in-out alternate;
+    }
+  }
+
   .selected {
     z-index: 10;
     text-decoration: underline 2px;
@@ -349,7 +385,8 @@ export const SubCategoryFilterContainer = styled.div`
     }
   }
   .menu {
-    margin: 6px;
+    width: calc(100% - 30%);
+    margin: 3px 6px;
     cursor: pointer;
     align-self: center;
     vertical-align: bottom;
@@ -359,5 +396,26 @@ export const SubCategoryFilterContainer = styled.div`
     border: 1px solid ${colors.main};
     border-radius: 50px;
     padding: 5px;
+  }
+`;
+
+export const OpenSubMenuChevron = styled(FontAwesomeIcon)`
+  margin-top: 6px;
+  color: ${colors.main};
+  border: 1px solid ${colors.main};
+  padding: 5px 7px;
+  border-radius: 50px;
+  animation: scalingChevron 1.5s infinite linear alternate;
+  @keyframes scalingChevron {
+    0% {
+      background: inherit
+      transform: scale(1);
+    }
+    100% {
+      background: ${colors.main};
+      color: #484b56;
+
+      transform: scale(1.2);
+    }
   }
 `;
