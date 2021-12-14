@@ -345,6 +345,11 @@ export const SubCategoryFilterContainer = styled.div`
       animation: appearSubCategory 0.1s ease-in-out alternate;
     }
   }
+  &.isClosed {
+    .menu:not(:first-child) {
+      display: none;
+    }
+  }
 
   .selected {
     z-index: 10;
