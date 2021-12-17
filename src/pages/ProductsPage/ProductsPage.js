@@ -17,7 +17,7 @@ const ProductsPage = ({ loading, setLoading }) => {
 
   useEffect(() => {
     setFilter("");
-  }, [loading]);
+  }, [loading, category]);
 
   return (
     <main>
