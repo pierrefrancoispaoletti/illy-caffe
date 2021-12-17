@@ -9,8 +9,6 @@ import {
   updateProductAction,
 } from "./actions";
 
-// ajouter une check des status dans les reponses pour savoir si onrenvoit la data ou le message
-
 export const getProductsByLocation = async (location, dispatch, setLoading) => {
   setLoading(true);
   try {
@@ -25,7 +23,6 @@ export const getProductsByLocation = async (location, dispatch, setLoading) => {
     }
     setLoading(false);
   } catch (error) {
-    dispatch(setUserMessage("Il y à eu un problème"));
     setLoading(false);
   }
 };

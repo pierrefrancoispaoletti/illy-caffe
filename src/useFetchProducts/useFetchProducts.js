@@ -9,7 +9,7 @@ function useFetchProducts(setLoading, categorySelected) {
   const dispatch = useDispatch();
   useEffect(() => {
     getProductsByLocation(placeLocation, dispatch, setLoading);
-  }, [dispatch, setLoading]);
+  }, [dispatch, setLoading, categorySelected]);
 
   return products;
 }
