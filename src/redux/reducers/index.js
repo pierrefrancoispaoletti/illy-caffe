@@ -8,7 +8,7 @@ import { placeLocation } from "../../_const";
 const persistConfig = {
   key: placeLocation,
   storage,
-  whitelist: ["user"],
+  whitelist: ["user", "products"],
 };
 
 const reducers = combineReducers({

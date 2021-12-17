@@ -19,10 +19,10 @@ const compare = (a, b) => {
 };
 const selectProducts = (state) => state.products;
 
-export const selectProductsByCategory = createSelector(
-  [selectProducts],
-  ({ products }) => products
-);
+export const selectProductsByCategory = (category) =>
+  createSelector([selectProducts], ({ products }) =>
+    products.filter((product) => product.category === category)
+  );
 
 export const selectModalType = createSelector(
   [selectProducts],
@@ -34,13 +34,13 @@ export const selectProductToEdit = createSelector(
   ({ productToEdit }) => productToEdit
 );
 
-export const selectProductsBySubCategory = (filter) =>
-  createSelector([selectProductsByCategory], (products) =>
-    filter
+export const selectProductsBySubCategory = (filter, category) =>
+  createSelector([selectProductsByCategory(category)], (products) =>
+    products && filter
       ? products.filter((product) =>
           product.subCategory ? product.subCategory === filter : product
         )
-      : products.sort((a, b) => {
+      : products?.sort((a, b) => {
           const index_result = compare(
             cafeOrders[a?.subCategory],
             cafeOrders[b?.subCategory]

@@ -11,20 +11,12 @@ import {
 
 // ajouter une check des status dans les reponses pour savoir si onrenvoit la data ou le message
 
-export const getProductsByLocation = async (
-  location,
-  category,
-  dispatch,
-  setLoading
-) => {
+export const getProductsByLocation = async (location, dispatch, setLoading) => {
   setLoading(true);
-  if (!category) {
-    category = "today";
-  }
   try {
     const response = await axios({
       method: "GET",
-      url: `${serverURI}/api/products/${location}/${category}`,
+      url: `${serverURI}/api/products/${location}`,
     });
     if (response.status === 200) {
       dispatch(getProductsByLocationAction(response.data));
