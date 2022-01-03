@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/illy-caffe/static/css/main.2c529301.chunk.css",
-    "main.js": "/illy-caffe/static/js/main.8a6a69ed.chunk.js",
-    "main.js.map": "/illy-caffe/static/js/main.8a6a69ed.chunk.js.map",
-    "runtime-main.js": "/illy-caffe/static/js/runtime-main.326eb550.js",
-    "runtime-main.js.map": "/illy-caffe/static/js/runtime-main.326eb550.js.map",
-    "static/js/2.0b041abc.chunk.js": "/illy-caffe/static/js/2.0b041abc.chunk.js",
-    "static/js/2.0b041abc.chunk.js.map": "/illy-caffe/static/js/2.0b041abc.chunk.js.map",
-    "static/js/3.dda00789.chunk.js": "/illy-caffe/static/js/3.dda00789.chunk.js",
-    "static/js/3.dda00789.chunk.js.map": "/illy-caffe/static/js/3.dda00789.chunk.js.map",
-    "static/js/4.8015511c.chunk.js": "/illy-caffe/static/js/4.8015511c.chunk.js",
-    "static/js/4.8015511c.chunk.js.map": "/illy-caffe/static/js/4.8015511c.chunk.js.map",
+    "main.js": "/illy-caffe/static/js/main.53063e0d.chunk.js",
+    "main.js.map": "/illy-caffe/static/js/main.53063e0d.chunk.js.map",
+    "runtime-main.js": "/illy-caffe/static/js/runtime-main.4f0126bb.js",
+    "runtime-main.js.map": "/illy-caffe/static/js/runtime-main.4f0126bb.js.map",
+    "static/js/2.fdebdc60.chunk.js": "/illy-caffe/static/js/2.fdebdc60.chunk.js",
+    "static/js/2.fdebdc60.chunk.js.map": "/illy-caffe/static/js/2.fdebdc60.chunk.js.map",
+    "static/js/3.16f663ed.chunk.js": "/illy-caffe/static/js/3.16f663ed.chunk.js",
+    "static/js/3.16f663ed.chunk.js.map": "/illy-caffe/static/js/3.16f663ed.chunk.js.map",
+    "static/js/4.b078046f.chunk.js": "/illy-caffe/static/js/4.b078046f.chunk.js",
+    "static/js/4.b078046f.chunk.js.map": "/illy-caffe/static/js/4.b078046f.chunk.js.map",
     "index.html": "/illy-caffe/index.html",
     "service-worker.js": "/illy-caffe/service-worker.js",
     "service-worker.js.map": "/illy-caffe/service-worker.js.map",
     "static/css/main.2c529301.chunk.css.map": "/illy-caffe/static/css/main.2c529301.chunk.css.map",
-    "static/js/2.0b041abc.chunk.js.LICENSE.txt": "/illy-caffe/static/js/2.0b041abc.chunk.js.LICENSE.txt",
+    "static/js/2.fdebdc60.chunk.js.LICENSE.txt": "/illy-caffe/static/js/2.fdebdc60.chunk.js.LICENSE.txt",
     "static/media/index.css": "/illy-caffe/static/media/crayonhand.f8408bf7.ttf",
     "static/media/damman.e51c3790.png": "/illy-caffe/static/media/damman.e51c3790.png",
     "static/media/domori-logo2.a9acefb3.png": "/illy-caffe/static/media/domori-logo2.a9acefb3.png",
@@ -23,9 +23,9 @@
     "static/media/logo.jpg": "/illy-caffe/static/media/logo.50b20848.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.326eb550.js",
-    "static/js/2.0b041abc.chunk.js",
+    "static/js/runtime-main.4f0126bb.js",
+    "static/js/2.fdebdc60.chunk.js",
     "static/css/main.2c529301.chunk.css",
-    "static/js/main.8a6a69ed.chunk.js"
+    "static/js/main.53063e0d.chunk.js"
   ]
 }
