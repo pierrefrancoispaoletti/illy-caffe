@@ -20,15 +20,15 @@ const isIlly = (props) => {
           animation: scalingChevronIlly 1.5s infinite linear alternate;
           @keyframes scalingChevronIlly {
             0% {
-                background: inherit
-                transform: scale(1);
-                }
+              background: inherit;
+              transform: scale(1);
+            }
             100% {
-                background: ${colors.secondary};
-                color: ${colors.main};
-                transform: scale(1.2);
-                }
-              }
+              background: ${colors.secondary};
+              color: ${colors.main};
+              transform: scale(1.2);
+            }
+          }
         }
         & > .loader > span {
           color: ${colors.secondary};
@@ -50,6 +50,7 @@ const isIlly = (props) => {
         & > .description {
           text-align: center;
           font-weight: 300;
+          text-transform: unset;
           @media (min-width: 420px) {
             text-align: left;
           }
@@ -167,7 +168,7 @@ export const TableauContainer = styled.div`
   perspective: 1500px;
   background: #484b56;
   .subcategory {
-    margin-top: 12px;
+    margin: 12px auto 0 auto;
     text-align: center;
     display: block;
     font-size: 2.2em;
@@ -175,6 +176,18 @@ export const TableauContainer = styled.div`
     font-family: "crayonHand";
     text-transform: uppercase;
     font-weight: 200;
+    border-top: 1px solid ${colors.primary};
+    border-bottom: 1px solid ${colors.primary};
+    padding: 12px 0 0 0;
+    width: 80%;
+    vertical-align: middle;
+    .subcategory-legend {
+      display: block;
+      text-transform: none;
+      font-size: 1.2rem;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
   }
   ${isIlly}
 `;
@@ -237,10 +250,10 @@ export const TableauContent = styled.div`
     letter-spacing: 2px;
     font-size: 1.5rem;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 12px auto;
     & > span {
-      max-width: 50%;
+      max-width: 65%;
       text-align: left;
     }
     @media (max-width: 420px) {
@@ -267,9 +280,12 @@ export const TableauContent = styled.div`
   }
 
   .description {
+    font-family: "Montserrat, sans";
+    letter-spacing: 1.5px;
     text-align: center;
     margin: 0;
     font-size: 1.3rem;
+    text-transform: capitalize;
   }
 
   .wine-color {

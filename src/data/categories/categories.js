@@ -5,6 +5,8 @@ import {
   faMugHot,
   faMugTea,
   faWineBottle,
+  faCheeseburger,
+  faCookie,
 } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LogoIlly from "../../assets/images/logo.jpg";
@@ -12,6 +14,7 @@ import LogoDomori from "../../assets/images/domori.jpg";
 import LogoDomori2 from "../../assets/images/domori-logo2.png";
 import LogoDamman from "../../assets/images/damman.png";
 import { colors } from "../../_const";
+import { faSandwich } from "@fortawesome/pro-solid-svg-icons";
 
 const logoSmall = "20px";
 export const categories = [
@@ -20,6 +23,40 @@ export const categories = [
     icon: <FontAwesomeIcon icon={faHatChef} size="2x" />,
     link: "/",
     slug: "today",
+  },
+  {
+    name: "La Carte",
+    icon: <FontAwesomeIcon icon={faCheeseburger} size="2x" />,
+    link: "/products/la-carte",
+    slug: "la-carte",
+    subCategory: [
+      { name: "Salades", slug: "salades" },
+      { name: "Bruschette", slug: "bruschette" },
+      { name: "Pates", slug: "pates" },
+      {
+        name: "Viandes & Burgers",
+        slug: "viande",
+        legend: "Accompagnements: Frites maison ou Pommes de terre au four",
+      },
+    ],
+  },
+  {
+    name: "Les Salés",
+    icon: <FontAwesomeIcon icon={faSandwich} size="2x" />,
+    link: "/products/la-vitrine-salee",
+    slug: "la-vitrine-salee",
+    subCategory: [
+      { name: "Panini", slug: "panini" },
+      { name: "Croques", slug: "croques" },
+      { name: "Hot-dog", slug: "hotdog" },
+      { name: "Bagels", slug: "bagels" },
+    ],
+  },
+  {
+    name: "Les Sucrés",
+    icon: <FontAwesomeIcon icon={faCookie} size="2x" />,
+    link: "/products/la-vitrine-sucree",
+    slug: "la-vitrine-sucree",
   },
   {
     name: "Le Froid",

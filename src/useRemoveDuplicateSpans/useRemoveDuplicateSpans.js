@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const useRemoveDuplicateSpans = () => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const removeDuplicateSpans = (classname) => {
       let spans = document.querySelectorAll(`.${classname}`);
       spans.forEach((element, index) => {
@@ -22,6 +22,14 @@ const useRemoveDuplicateSpans = () => {
       "softs",
       "granita",
       "bieres",
+      "salades",
+      "bruschette",
+      "pates",
+      "viande",
+      "panini",
+      "croques",
+      "hotdog",
+      "bagels",
     ];
     classNames.forEach((className) => removeDuplicateSpans(className));
     //methode caca pour faire ça

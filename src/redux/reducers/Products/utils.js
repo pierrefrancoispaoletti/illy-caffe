@@ -21,6 +21,7 @@ export const filteredProductsList = (actionType, state, payload) => {
 
 export const findSubCategoryName = (product) => {
   let scSlug;
+  let scLegend;
   let categoryName = categories
     .map(
       (category) =>
@@ -29,9 +30,14 @@ export const findSubCategoryName = (product) => {
           if (sc?.slug === product?.subCategory) {
             scSlug = sc?.slug;
           }
+          if (sc?.legend) scLegend = sc?.legend;
           return sc?.slug === product?.subCategory;
         })
     )
     .filter((p) => p)[0]?.name;
-  return <span className={`subcategory ${scSlug}`}>{categoryName}</span>;
+  return (
+    <span className={`subcategory ${scSlug}`}>
+      {categoryName} <span className="subcategory-legend">{scLegend}</span>
+    </span>
+  );
 };
