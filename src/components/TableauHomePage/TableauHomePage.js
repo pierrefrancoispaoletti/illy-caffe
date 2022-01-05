@@ -32,7 +32,9 @@ const TableauHomePage = ({ setFilter, children, filter }) => {
       illy={
         findCategory?.slug === "le-cafe" ||
         findCategory?.slug === "le-chocolat" ||
-        findCategory?.slug === "le-the"
+        findCategory?.slug === "le-the" ||
+        findCategory?.slug === "la-vitrine-salee" ||
+        findCategory?.slug === "la-vitrine-sucree"
           ? true
           : false
       }

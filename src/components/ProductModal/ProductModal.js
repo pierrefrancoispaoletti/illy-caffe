@@ -49,7 +49,7 @@ const ProductModal = ({ currentCategory }) => {
   useEffect(() => {
     if (type === "ajouter") {
       setProduct((prevState) => ({
-        ...prevState,
+        ...initialState,
         category: currentCategory,
         location: placeLocation,
       }));

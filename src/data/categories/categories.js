@@ -1,32 +1,22 @@
-import {
-  faGlass,
-  faHatChef,
-  faCoffee,
-  faMugHot,
-  faMugTea,
-  faWineBottle,
-  faCheeseburger,
-  faCookie,
-} from "@fortawesome/pro-light-svg-icons";
+import { faCoffee, faMugHot, faMugTea } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LogoIlly from "../../assets/images/logo.jpg";
 import LogoDomori from "../../assets/images/domori.jpg";
 import LogoDomori2 from "../../assets/images/domori-logo2.png";
 import LogoDamman from "../../assets/images/damman.png";
 import { colors } from "../../_const";
-import { faSandwich } from "@fortawesome/pro-solid-svg-icons";
 
 const logoSmall = "20px";
 export const categories = [
   {
     name: "Aujourd'hui",
-    icon: <FontAwesomeIcon icon={faHatChef} size="2x" />,
+    // icon: <FontAwesomeIcon icon={faHatChef} size="2x" />,
     link: "/",
     slug: "today",
   },
   {
-    name: "La Carte",
-    icon: <FontAwesomeIcon icon={faCheeseburger} size="2x" />,
+    name: "La Carte Restaurant",
+    // icon: <FontAwesomeIcon icon={faCheeseburger} size="2x" />,
     link: "/products/la-carte",
     slug: "la-carte",
     subCategory: [
@@ -41,8 +31,8 @@ export const categories = [
     ],
   },
   {
-    name: "Les Salés",
-    icon: <FontAwesomeIcon icon={faSandwich} size="2x" />,
+    name: "Vitrine Salée",
+    // icon: <FontAwesomeIcon icon={faSandwich} size="2x" />,
     link: "/products/la-vitrine-salee",
     slug: "la-vitrine-salee",
     subCategory: [
@@ -53,29 +43,30 @@ export const categories = [
     ],
   },
   {
-    name: "Les Sucrés",
-    icon: <FontAwesomeIcon icon={faCookie} size="2x" />,
+    name: "Vitrine Sucrée",
+    // icon: <FontAwesomeIcon icon={faCookie} size="2x" />,
     link: "/products/la-vitrine-sucree",
     slug: "la-vitrine-sucree",
   },
   {
-    name: "Le Froid",
-    icon: <FontAwesomeIcon icon={faGlass} size="2x" />,
+    name: "Boissons Fraiches",
+    // icon: <FontAwesomeIcon icon={faGlass} size="2x" />,
     link: "/products/le-froid",
     slug: "le-froid",
     subCategory: [
       { name: "Eaux", slug: "eaux" },
       { name: "Softs", slug: "softs" },
       { name: "Granita", slug: "granita" },
+      { name: "Vins", slug: "vins" },
       { name: "Bières", slug: "bieres" },
     ],
   },
-  {
-    name: "Le Vin",
-    icon: <FontAwesomeIcon icon={faWineBottle} size="2x" />,
-    link: "/products/le-vin",
-    slug: "le-vin",
-  },
+  // {
+  //   name: "Le Vin",
+  //   icon: <FontAwesomeIcon icon={faWineBottle} size="2x" />,
+  //   link: "/products/le-vin",
+  //   slug: "le-vin",
+  // },
   {
     name: "Le Café",
     icon: <FontAwesomeIcon icon={faCoffee} size="2x" />,

@@ -1,36 +1,20 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useCallback } from "react";
+import { categories } from "../data/categories/categories";
 
 const useRemoveDuplicateSpans = () => {
+  const removeDuplicateSpans = useCallback((classname) => {
+    let spans = document.querySelectorAll(`.${classname}`);
+    spans.forEach((element, index) => {
+      if (index > 0) {
+        element?.remove();
+      }
+    });
+  }, []);
   useLayoutEffect(() => {
-    const removeDuplicateSpans = (classname) => {
-      let spans = document.querySelectorAll(`.${classname}`);
-      spans.forEach((element, index) => {
-        if (index > 0) {
-          element?.remove();
-        }
-      });
-    };
-    let classNames = [
-      "classiques",
-      "monoarabica",
-      "spéciaux",
-      "illy-crema",
-      "domori",
-      "recettes-froides",
-      "sodas",
-      "eaux",
-      "softs",
-      "granita",
-      "bieres",
-      "salades",
-      "bruschette",
-      "pates",
-      "viande",
-      "panini",
-      "croques",
-      "hotdog",
-      "bagels",
-    ];
+    let classNames = categories
+      ?.map((cat) => cat?.subCategory?.map((sc) => sc?.slug))
+      .filter((item) => item !== undefined)
+      .flat();
     classNames.forEach((className) => removeDuplicateSpans(className));
     //methode caca pour faire ça
   });

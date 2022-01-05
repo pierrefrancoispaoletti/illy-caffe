@@ -68,12 +68,16 @@ const ProductModalForm = ({
         handleChange={handleChange}
         required
       />
-      <FormInput
+      <label htmlFor="description">Description</label>
+      <textarea
+        className="textarea-description"
+        id="description"
         type="text"
         name="description"
-        label="Description"
+        rows={5}
+        cols={28}
         value={description}
-        handleChange={handleChange}
+        onChange={handleChange}
       />
       <FormInput
         type="number"

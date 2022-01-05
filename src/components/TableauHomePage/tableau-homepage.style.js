@@ -42,7 +42,7 @@ const isIlly = (props) => {
           & > .price {
             color: black;
             font-family: unset;
-            border-bottom: 1px solid ${colors.secondary};
+            ${"" /* border-bottom: 1px solid ${colors.secondary}; */}
             font-size: 1rem;
             font-style: italic;
           }
@@ -176,12 +176,12 @@ export const TableauContainer = styled.div`
     font-family: "crayonHand";
     text-transform: uppercase;
     font-weight: 200;
-    border-top: 1px solid ${colors.primary};
     border-bottom: 1px solid ${colors.primary};
     padding: 12px 0 0 0;
     width: 80%;
     vertical-align: middle;
     .subcategory-legend {
+      border-top: 1px solid ${colors.primary};
       display: block;
       text-transform: none;
       font-size: 1.2rem;
@@ -270,9 +270,9 @@ export const TableauContent = styled.div`
   .price {
     font-family: "ChalkAboutItalic";
     font-weight: 400;
-    :not(.wineprice) {
+    /* :not(.wineprice) {
       border-bottom: 1px solid ${colors.main};
-    }
+    } */
     font-size: 1.1rem;
     @media (max-width: 370px) {
       font-size: 1.5rem;
@@ -285,7 +285,10 @@ export const TableauContent = styled.div`
     text-align: center;
     margin: 0;
     font-size: 1.3rem;
-    text-transform: capitalize;
+    white-space: pre-wrap;
+    @media (min-width: 415px) {
+      white-space: normal;
+    }
   }
 
   .wine-color {

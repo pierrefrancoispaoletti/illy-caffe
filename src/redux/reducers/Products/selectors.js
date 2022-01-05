@@ -11,6 +11,7 @@ const cafeOrders = {
   softs: 7,
   granita: 8,
   bieres: 9,
+  vins: 10,
   salades: 20,
   bruschette: 21,
   pates: 22,
