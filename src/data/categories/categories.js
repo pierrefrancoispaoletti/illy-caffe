@@ -56,6 +56,7 @@ export const categories = [
     subCategory: [
       { name: "Eaux", slug: "eaux" },
       { name: "Softs", slug: "softs" },
+      { name: "Fruits Frais Préssés", slug: "fruits-frais" },
       { name: "Granita", slug: "granita" },
       { name: "Vins", slug: "vins" },
       { name: "Bières", slug: "bieres" },

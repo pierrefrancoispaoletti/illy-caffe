@@ -176,7 +176,7 @@ export const TableauContainer = styled.div`
     font-family: "crayonHand";
     text-transform: uppercase;
     font-weight: 200;
-    border-bottom: 1px solid ${colors.primary};
+    border-top: 1px solid ${colors.primary};
     padding: 12px 0 0 0;
     width: 80%;
     vertical-align: middle;
@@ -187,6 +187,7 @@ export const TableauContainer = styled.div`
       font-size: 1.2rem;
       margin-top: 8px;
       line-height: 1.5;
+      padding-top: 8px;
     }
   }
   ${isIlly}

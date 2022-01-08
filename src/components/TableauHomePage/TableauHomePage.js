@@ -34,7 +34,9 @@ const TableauHomePage = ({ setFilter, children, filter }) => {
         findCategory?.slug === "le-chocolat" ||
         findCategory?.slug === "le-the" ||
         findCategory?.slug === "la-vitrine-salee" ||
-        findCategory?.slug === "la-vitrine-sucree"
+        findCategory?.slug === "la-vitrine-sucree" ||
+        findCategory?.slug === "le-froid" ||
+        findCategory?.slug === "fruits-presses"
           ? true
           : false
       }
