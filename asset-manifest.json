@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/illy-caffe/static/css/main.2c529301.chunk.css",
-    "main.js": "/illy-caffe/static/js/main.cb0415a4.chunk.js",
-    "main.js.map": "/illy-caffe/static/js/main.cb0415a4.chunk.js.map",
-    "runtime-main.js": "/illy-caffe/static/js/runtime-main.94cad0cc.js",
-    "runtime-main.js.map": "/illy-caffe/static/js/runtime-main.94cad0cc.js.map",
+    "main.js": "/illy-caffe/static/js/main.b7527048.chunk.js",
+    "main.js.map": "/illy-caffe/static/js/main.b7527048.chunk.js.map",
+    "runtime-main.js": "/illy-caffe/static/js/runtime-main.3280bb27.js",
+    "runtime-main.js.map": "/illy-caffe/static/js/runtime-main.3280bb27.js.map",
     "static/js/2.72eb3e9f.chunk.js": "/illy-caffe/static/js/2.72eb3e9f.chunk.js",
     "static/js/2.72eb3e9f.chunk.js.map": "/illy-caffe/static/js/2.72eb3e9f.chunk.js.map",
     "static/js/3.691314a0.chunk.js": "/illy-caffe/static/js/3.691314a0.chunk.js",
     "static/js/3.691314a0.chunk.js.map": "/illy-caffe/static/js/3.691314a0.chunk.js.map",
-    "static/js/4.b33f1764.chunk.js": "/illy-caffe/static/js/4.b33f1764.chunk.js",
-    "static/js/4.b33f1764.chunk.js.map": "/illy-caffe/static/js/4.b33f1764.chunk.js.map",
+    "static/js/4.830c15f9.chunk.js": "/illy-caffe/static/js/4.830c15f9.chunk.js",
+    "static/js/4.830c15f9.chunk.js.map": "/illy-caffe/static/js/4.830c15f9.chunk.js.map",
     "index.html": "/illy-caffe/index.html",
     "service-worker.js": "/illy-caffe/service-worker.js",
     "service-worker.js.map": "/illy-caffe/service-worker.js.map",
@@ -23,9 +23,9 @@
     "static/media/logo.jpg": "/illy-caffe/static/media/logo.50b20848.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.94cad0cc.js",
+    "static/js/runtime-main.3280bb27.js",
     "static/js/2.72eb3e9f.chunk.js",
     "static/css/main.2c529301.chunk.css",
-    "static/js/main.cb0415a4.chunk.js"
+    "static/js/main.b7527048.chunk.js"
   ]
 }
