@@ -9,11 +9,15 @@ const ProductOverview = ({ loading, products, setFilter, filter }) => {
       {loading ? (
         <LoaderElement />
       ) : (
-        products?.map((product) => {
+        products?.map((product, index) => {
           return (
             <div key={product._id} style={{ width: "100%" }}>
               {product?.subCategory && findSubCategoryName(product)}
-              <ProductElement product={product} />
+              <ProductElement
+                product={product}
+                index={index}
+                length={products.length}
+              />
             </div>
           );
         })

@@ -5,12 +5,16 @@ import { selectCurrentUser } from "../../redux/reducers/User/selector";
 import { useSelector } from "react-redux";
 import WineElement from "../WineElement/WineElement";
 
-const ProductElement = ({ product }) => {
+const ProductElement = ({ product, index, length }) => {
   const { _id, price, description, title, visible, category, couleur } =
     product;
   const user = useSelector(selectCurrentUser);
+
   return (
-    <TableauContent visible={user?.role === "isAdmin" || visible}>
+    <TableauContent
+      visible={user?.role === "isAdmin" || visible}
+      first={category === "today" && index === 0 && length > 1}
+    >
       {user && user.role === "isAdmin" && (
         <AdminButtonBar _id={_id} product={product} />
       )}

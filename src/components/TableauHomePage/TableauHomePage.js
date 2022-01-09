@@ -25,7 +25,6 @@ const TableauHomePage = ({ setFilter, children, filter }) => {
     prevlocationValueRef.current = location.pathname;
   });
   const prevlocationValue = prevlocationValueRef.current;
-
   return (
     <TableauContainer
       className="tableau-homepage"

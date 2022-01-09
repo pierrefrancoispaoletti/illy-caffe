@@ -76,6 +76,19 @@ const isIlly = (props) => {
   }
 };
 
+const isFirstInHome = (props) => {
+  if (props.first) {
+    return css`
+      .description {
+        margin-bottom: 12px !important;
+        padding-bottom: 12px;
+        border-bottom: 5px solid ${colors.main};
+        width: 100%;
+      }
+    `;
+  }
+};
+
 const contentVisible = (props) => {
   if (!props.visible)
     return css`
@@ -200,7 +213,6 @@ export const TableauWrapper = styled.div`
   background-color: #484b56;
   min-height: 80vh;
   ${getTransitionType}
-  ${isIlly}
 `;
 
 export const TableauTitle = styled.h2`
@@ -240,6 +252,7 @@ export const TableauContent = styled.div`
     align-items: center;
   }
   ${contentVisible}
+  ${isFirstInHome}
 
   .title {
     width: 100%;
