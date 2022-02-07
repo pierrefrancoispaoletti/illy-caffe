@@ -6,6 +6,7 @@ import CategorySelector from "../CategorySelector/CategorySelector";
 import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
 import LocalMessage from "../LocalMessage/LocalMessage";
+import OrderNumberBanner from "../OrderNumberBanner/OrderNumberBanner";
 const Login = lazy(() => import("../../pages/Login/Login"));
 const ProductsPage = lazy(() =>
   import("../../pages/ProductsPage/ProductsPage")
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <OrderNumberBanner top />
       <LocalMessage />
       <CategorySelector />
       <Suspense fallback={<Loader />}>
@@ -44,6 +46,8 @@ const App = () => {
           />
         </Routes>
       </Suspense>
+      {/* <FloatActionButton />
+      <OrderNumberBanner /> */}
     </div>
   );
 };
