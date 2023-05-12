@@ -9,7 +9,11 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   /* border-bottom: 3px solid black; */
   border-radius: 0 0 50px 50px;
-  background: linear-gradient(to right, ${colors.main}, ${colors.secondary});
+  background: linear-gradient(
+    to right,
+    ${colors.tertiary},
+    ${colors.secondary}
+  );
   background-size: 400% 400%;
   animation: backgroundMoving 25s infinite ease;
   @keyframes backgroundMoving {
@@ -28,7 +32,8 @@ export const HeaderContainer = styled.header`
 
 export const HeaderTitle = styled.div`
   position: absolute;
-  top: 70%;
+  top: 55%;
+
   font-size: 2.5em;
   color: ${colors.main};
   font-weight: 200;

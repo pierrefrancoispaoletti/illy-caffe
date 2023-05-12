@@ -1,10 +1,10 @@
-import { faDoorOpen, faUser } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { LoginButtonStyled } from "./login-button.style";
 import { selectCurrentUser } from "../../redux/reducers/User/selector";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserMessage, userSignOut } from "../../redux/reducers/User/actions";
+import { faDoorOpen, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Loginbutton = () => {
   const user = useSelector(selectCurrentUser);

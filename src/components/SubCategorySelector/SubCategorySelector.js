@@ -1,9 +1,9 @@
-import { faChevronDown, faChevronUp } from "@fortawesome/pro-solid-svg-icons";
 import React, { useEffect, useState, useRef } from "react";
 import {
   OpenSubMenuChevron,
   SubCategoryFilterContainer,
 } from "../TableauHomePage/tableau-homepage.style";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const SubCategorySelector = ({ filter, findCategory, setFilter }) => {
   const [open, setOpen] = useState(false);

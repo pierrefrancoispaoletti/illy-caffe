@@ -3,7 +3,7 @@
 }
 
 html {
-  background: linear-gradient(to left, #fdfdfd, #fe0000);
+  background: linear-gradient(to left, #aecd97, #AECD97);
   background-size: 400% 400%;
   animation: backgroundMoving 25s infinite ease;
   @keyframes backgroundMoving {

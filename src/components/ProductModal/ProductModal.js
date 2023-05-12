@@ -8,7 +8,6 @@ import {
 } from "../../redux/reducers/Products/selectors";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/pro-light-svg-icons";
 
 import ProductModalForm from "../ProductModalForm/ProductModalForm";
 import WinePartProductModal from "../WinePartProductModal/WinePartProductModal";
@@ -22,6 +21,7 @@ import {
 } from "./product-modal.style";
 import { categories } from "../../data/categories/categories";
 import SubCategoryPartProductModal from "../SubCategoryPartProductModal/SubCategoryPart.ProductModal";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const ProductModal = ({ currentCategory }) => {
   const { type, open } = useSelector(selectModalType);

@@ -1,7 +1,7 @@
-import { faPhone } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { FABContainer } from "./float-action-button.style";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const FloatActionButton = () => {
   return (

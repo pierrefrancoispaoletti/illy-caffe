@@ -1,10 +1,10 @@
-import { faWineBottle } from "@fortawesome/pro-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {
   WinePriceContainer,
   WinePriceElement,
 } from "../TableauHomePage/tableau-homepage.style";
+import { faWineBottle } from "@fortawesome/free-solid-svg-icons";
 
 const WineElement = ({ couleur }) => {
   return (
